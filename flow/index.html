@@ -1,0 +1,1373 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#08090c"><title>海本精管 · 全过程管理 · 关联资料版 V5</title><style>:root{--bg:#08090c;--surface:#101216;--line:#ffffff12;--ink:#eceef2;--muted:#878b96;--accent:#c1d5e8}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% 28%,#171a23 0,transparent 48%),var(--bg);color:var(--ink);font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.65}button,select{font:inherit;color:inherit}button,a,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button{background:none;border:0}button:focus-visible,a:focus-visible,select:focus-visible{outline:2px solid #c1d5e8;outline-offset:4px}a{color:inherit;text-decoration:none}h1,h2,h3,p{margin:0}h1,h2,h3{font-weight:500}.topbar{height:92px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;border-bottom:1px solid #ffffff0b;gap:20px}.brand img{width:150px;height:47px;object-fit:contain}.top-label{color:#5f6470;font-size:9px;letter-spacing:.25em}.quiet{font-size:12px;color:#b0b5c0;min-height:44px;padding:10px 12px;transition:color .2s}.quiet:hover{color:#fff}.quiet>span{margin-left:14px}main{max-width:1550px;margin:0 auto;padding:0 5%}.intro{display:flex;align-items:end;justify-content:space-between;gap:30px;padding:64px 0 50px}.eyebrow{font-size:10px;letter-spacing:.19em;color:#959ba8;margin-bottom:20px}.status-light{width:5px;height:5px;border-radius:100%;background:#dce9f6;display:inline-block;margin-right:9px;box-shadow:0 0 9px #a7d8ff66}h1{font-size:clamp(35px,3.8vw,56px);line-height:1.2;letter-spacing:-.04em}h1 span{background:linear-gradient(100deg,#e8eaf0,#818692);-webkit-background-clip:text;background-clip:text;color:transparent}.intro>p{font-size:12px;line-height:1.95;color:var(--muted);padding-bottom:3px}.instrument{border:1px solid #ffffff16;border-radius:22px;background:linear-gradient(120deg,#ffffff02,#ffffff00);position:relative;box-shadow:0 30px 100px #00000025;overflow:hidden}.instrument-head{display:flex;align-items:center;justify-content:space-between;padding:17px 24px;gap:10px;border-bottom:1px solid #ffffff08}.segmented{display:flex;background:#07080b80;border:1px solid #ffffff0b;border-radius:9px;padding:3px}.segmented button{padding:8px 17px;border-radius:6px;color:#7f8590;min-height:34px;font-size:11px}.segmented button[aria-pressed=true]{background:linear-gradient(#2b2e36,#22252d);box-shadow:inset 0 1px 0 #ffffff10,0 2px 5px #0005;color:#e4e8ef}.instrument-actions{display:flex;gap:8px;align-items:center}.separator{height:14px;width:1px;background:#ffffff12;margin:0 2px}.speed-label{font-size:10px;color:#6f7684;margin-left:6px}.speed-label select{border:0;background:transparent;color:#aab2c0;font-size:11px;min-height:35px;margin-left:4px}.speed-label option{background:#151820}.canvas-wrap{position:relative;isolation:isolate;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#333945 transparent;background:radial-gradient(ellipse at 50% 70%,#302c2830,transparent 44%)}#diagram{width:100%;display:block;position:relative;z-index:2}.canvas-glow{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(#8792a826 .65px,transparent .65px);background-size:22px 22px;mask-image:radial-gradient(ellipse,#0006,transparent 68%)}.wire{fill:none;stroke:#737d923d;stroke-width:1.1}.wire.active{stroke:#a6bace80}.wire.governance{stroke:#73819425;stroke-width:.8}.node{cursor:pointer;outline:none}.node .metal{fill:url(#metal);stroke:#ffffff20;stroke-width:1}.node:hover .metal,.node:focus-visible .metal{stroke:#b2c8dd9c}.node.selected .metal{fill:url(#activeMetal);stroke:#becfe488;filter:url(#nodeGlow)}.node .port{fill:#8893a0;filter:url(#pointGlow)}.node.selected .port{fill:#eff8ff}.node-title{fill:#e4e8ee;font-size:18px;font-weight:500}.node-en{fill:#77818f;font-size:9px;letter-spacing:1.7px}.node-num{fill:#6d7988;font-size:11px;font-family:monospace}.node.selected .node-num{fill:#c3d5e7}.node-icon{fill:none;stroke:#a5b0bd;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}.node-icon-back{fill:#ffffff06;stroke:#ffffff15}.port-mark{fill:#8e9bab}.flow-dot{fill:#eaf5ff;filter:url(#pointGlow);pointer-events:none}.core-body{fill:url(#coreMetal);stroke:#a8b4c25c;stroke-width:1}.core-pin{stroke:#6c7687;stroke-width:1}.core-sub{fill:#697180;letter-spacing:2px;font-size:8px}.graph-label{fill:#69717f;font-size:9px;letter-spacing:1.8px}.branch-label{fill:#bfc7d3;font-size:15px}.branch-count{fill:#687484;font-size:10px;letter-spacing:1px}.canvas-caption{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:0 26px 24px;font-size:10px;color:#6f7683}.signal{white-space:nowrap;display:flex;align-items:center;gap:7px;font-size:9px}.signal i{width:4px;height:4px;border-radius:50%;background:#b4c9dd;box-shadow:0 0 8px #7cc5ff77}.signal-note{color:#555d6d}.owner-strip{display:flex;align-items:center;gap:20px;border-top:1px solid #ffffff0d;padding:24px 28px;background:#0000000c}.owner-label{font-size:11px;white-space:nowrap;color:#b9c0cb}.owner-label span{display:block;font-size:8px;color:#606a79;letter-spacing:1px;margin-top:3px}.milestones{display:flex;gap:12px}.milestone{border:1px solid #ffffff16;border-radius:50%;width:31px;height:31px;min-width:31px;padding:0;color:#757f8f;font:10px monospace;position:relative}.milestone.in-stage{border-color:#a2b6c752;color:#b5c9dc}.milestone.selected{background:#d8e7f3;color:#11151b;border-color:#d8e7f3;box-shadow:0 0 15px #b1d7ff22}.milestone-hint{font-size:11px;color:#949daa;max-width:260px;line-height:1.65;margin-left:auto}.detail-section{padding:54px 0 40px}.stage-nav{display:flex;justify-content:space-between;border-bottom:1px solid #ffffff10;gap:8px;margin-bottom:46px}.stage-nav button{color:#666e7d;font-size:12px;padding:0 4px 17px;white-space:nowrap;border-bottom:1px solid transparent;min-height:44px}.stage-nav button span{font:9px monospace;margin-right:9px;color:#505967}.stage-nav button.active{color:#e5eaf1;border-color:#aabacd}.stage-nav button.active span{color:#aabacd}.detail-head{display:grid;grid-template-columns:1fr .85fr;gap:55px;margin-bottom:34px}.detail-head .eyebrow{margin-bottom:12px;font-size:9px}h2{font-size:clamp(25px,2.4vw,34px);letter-spacing:-.03em;line-height:1.4}.detail-summary{font-size:12px;line-height:1.9;color:#818b9b}.budget{display:flex;gap:16px;align-items:center;margin-top:15px;font-size:10px}.budget span{color:#5b6575}.budget b{font-weight:400;color:#c1c8d2}.group-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}.group-card{background:linear-gradient(145deg,#ffffff04,#ffffff01);border:1px solid #ffffff0d;border-radius:13px;padding:23px 22px 25px;transition:border-color .3s}.group-card.selected{border-color:#acc8df6b;background:linear-gradient(145deg,#809dba12,#ffffff01)}.group-card-head{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-bottom:20px}.group-card h3{font-size:14px;color:#c6ced9;line-height:1.6}.group-kind{font:8px monospace;white-space:nowrap;letter-spacing:1px;color:#4f5d70;padding-top:5px}.group-card ol,.group-card ul{list-style:none;margin:0;padding:0}.group-card li{position:relative;color:#929dad;font-size:12px;line-height:1.85;padding:0 0 12px 18px}.group-card li:before{content:'';position:absolute;left:0;top:9px;width:3px;height:3px;background:#8a9fb5;border-radius:50%;box-shadow:0 0 6px #bbd5ee20}.group-card ol li:not(:last-child):after{content:'';position:absolute;left:1px;top:15px;bottom:0;width:1px;background:#74859a22}.loop-note{font-size:10px;line-height:1.85;color:#7f91a8;border-top:1px solid #ffffff08;padding-top:13px;margin-top:7px}.group-note{grid-column:1/-1;border-left:1px solid #93a6bc50;padding:6px 17px;margin:12px 0;color:#949dac;font-size:12px}.deliverable{margin-top:30px;border-top:1px solid #ffffff0a;padding-top:25px;display:flex;gap:25px;align-items:center}.micro-label{font-size:8px;letter-spacing:.16em;color:#5d6879}.deliverable p{color:#a2adbc;font-size:12px}.deliverable button{margin-left:auto;white-space:nowrap}.all-section{border-top:1px solid #ffffff0b;margin:20px 0 60px}.all-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;padding:26px 0;color:#868f9d;font-size:12px}.all-stage{padding:35px 0;border-top:1px solid #ffffff0b;display:grid;grid-template-columns:1fr 3fr;gap:30px}.all-stage h3{font-size:20px}.all-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.all-groups h4{font-size:12px;color:#bfc8d5;font-weight:500;margin:0 0 10px}.all-groups p{font-size:12px;color:#818fa1;line-height:1.95}.all-groups .small{font-size:10px;color:#58677b;margin-top:8px}footer{border-top:1px solid #ffffff08;display:flex;align-items:center;justify-content:space-between;padding:32px 5% 45px;font-size:9px;color:#565f6e;letter-spacing:1px}footer>div{display:flex;align-items:center;gap:20px}.footer-brand{font-size:17px;letter-spacing:-.5px;color:#9da8b6}.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#252d38;color:#e2eaf6;padding:12px 20px;border:1px solid #5b6c8144;border-radius:10px;z-index:10;font-size:12px;display:none;max-width:90vw}.toast.show{display:block}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(min-width:1600px){.intro{padding-top:80px}.instrument{margin-top:10px}}
+@media(max-width:1000px){.owner-strip{flex-wrap:wrap;gap:12px}.milestone-hint{max-width:none;margin-left:0;width:100%;padding-left:0}.group-list{grid-template-columns:repeat(2,1fr)}.intro>p{max-width:240px}#diagram{min-width:970px}.canvas-wrap{height:370px}.instrument-head{padding:13px 15px}.speed-label{display:none}}
+@media(max-width:600px){.topbar{height:74px;padding:0 20px}.brand img{width:120px;height:40px}.top-label{display:none}.quiet{font-size:11px;padding:8px;min-height:44px}main{padding:0 20px}.intro{padding:40px 0 30px;display:block}.intro .eyebrow{font-size:8px;margin-bottom:19px}h1{font-size:36px;letter-spacing:-1.2px}h1 span{display:block;margin-top:4px}.intro>p{margin-top:20px;font-size:11px;max-width:none}.instrument{border-radius:15px;margin:0 -5px}.instrument-head{display:block;padding:12px}.segmented{display:inline-flex}.segmented button{font-size:10px;padding:7px 13px}.instrument-actions{justify-content:space-between;margin-top:8px;gap:4px}.instrument-actions .separator{display:none}.canvas-wrap{height:370px}#diagram{min-width:1000px;height:354px}.canvas-caption{padding:0 15px 20px;display:block;font-size:9px}.signal{margin-top:9px}.owner-strip{padding:18px 15px;gap:14px}.owner-label{width:100%;display:flex;justify-content:space-between;font-size:10px}.owner-label span{font-size:9px;margin:0}.milestones{width:100%;justify-content:space-between;gap:4px}.milestone{width:28px;height:28px;min-width:28px}.milestone:after{content:'';position:absolute;inset:-7px}.milestone-hint{font-size:10px}.detail-section{padding-top:25px}.stage-nav{overflow-x:auto;justify-content:start;gap:26px;scrollbar-width:none;margin-bottom:30px}.stage-nav button{font-size:11px}.stage-nav button span{font-size:8px;margin-right:6px}.detail-head{display:block;margin-bottom:25px}.detail-summary{margin-top:20px;font-size:12px}.group-list{grid-template-columns:1fr}.group-card{padding:22px}.group-card h3{font-size:15px}.group-card li{font-size:13px}.deliverable{display:block}.deliverable p{margin:12px 0}.deliverable button{padding-left:0;margin:0}.all-stage{grid-template-columns:1fr}.all-groups{grid-template-columns:1fr}footer{padding:28px 20px;display:block}footer>div{gap:12px;font-size:8px}footer>span{display:block;margin-top:14px;font-size:7px}.signal-note{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.top-actions{display:flex;align-items:center;gap:14px}.map-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 22px;border-bottom:1px solid var(--line);font-size:10px;color:var(--muted)}.map-toolbar[hidden]{display:none}.map-controls{display:flex;align-items:center;gap:5px}.map-controls button{font-size:10px;color:var(--ink);padding:7px 10px;min-height:34px;border:1px solid var(--line);border-radius:6px;background:#ffffff03}.map-controls button:hover{background:#8094af22}.map-controls button[aria-pressed=true]{border-color:#8799b066}.map-controls #zoomIn,.map-controls #zoomOut{font-size:16px;min-width:32px;padding:0 9px}.map-controls #zoomValue{font:10px monospace;min-width:32px;text-align:center}.all-mode .canvas-wrap{height:clamp(410px,61vh,850px);overflow:auto;cursor:grab;touch-action:pan-x pan-y;overscroll-behavior:contain;scrollbar-width:thin}.all-mode .canvas-wrap.dragging{cursor:grabbing;user-select:none}.all-mode #diagram{min-width:0;max-width:none;display:block;user-select:none}.all-mode .canvas-glow{display:none}.all-mode .canvas-caption{padding:15px 24px}.bubble-node{cursor:pointer;outline:none}.bubble-node:hover>rect,.bubble-node:focus-visible>rect{stroke-width:4;stroke:var(--accent);filter:drop-shadow(0 0 5px #aac9ed44)}.bubble-node:focus-visible>rect{stroke-dasharray:7 5}.instrument:fullscreen{border-radius:0;background:var(--bg);width:100%;height:100%;padding:0 2vw;overflow:auto}.instrument:fullscreen .canvas-wrap{height:calc(100dvh - 250px)}.instrument:fullscreen .owner-strip{padding:12px 24px}.instrument:fullscreen .canvas-caption{padding:10px 24px}button[disabled]{cursor:wait;opacity:.6}
+@media(max-width:1050px){.map-toolbar{align-items:flex-start;flex-direction:column;gap:10px}.map-controls{flex-wrap:wrap;width:100%}.top-label{display:none}.all-mode .canvas-wrap{height:480px}.map-controls button{min-height:38px}}
+@media(max-width:600px){.topbar{height:auto;min-height:106px;flex-wrap:wrap;padding:12px 18px;gap:4px}.brand img{width:126px}.top-actions{gap:5px;flex-wrap:wrap;justify-content:flex-end;max-width:185px}.top-actions .quiet{padding:0 9px;min-height:33px;font-size:10px}.intro{padding-top:30px}.segmented button{padding:8px 12px}.map-toolbar{padding:13px}.map-controls{gap:5px}.map-controls button{padding:5px 8px;min-height:40px}.map-controls #zoomValue{min-width:27px}.all-mode .canvas-wrap{height:460px}.all-mode .canvas-caption{padding:14px}.all-mode #diagram{min-width:0}.instrument:fullscreen .canvas-wrap{height:calc(100dvh - 360px)}}
+.all-mode .canvas-wrap.map-fitted #diagram{margin-inline:auto}.all-mode #diagram{transform-origin:0 0}@media(max-width:700px){.all-mode .canvas-wrap{height:min(74dvh,660px)}}@media(max-width:600px){.all-mode .canvas-wrap.map-fitted{height:calc((100vw - 32px)*.571);min-height:190px}.instrument:fullscreen .canvas-wrap.map-fitted{height:calc(100dvh - 360px)}}
+</style><style>/* Two intentionally complete themes: readable paper and restrained graphite. */
+:root{color-scheme:dark;--theme-border:#ffffff16;--theme-soft:#ffffff09;--theme-control:#101319;--theme-selected:#303844;--theme-highlight:#c3d7e9}
+html[data-theme="light"]{color-scheme:light;--bg:#f5f5f3;--surface:#ffffff;--line:#25334224;--ink:#20262d;--muted:#515e6b;--accent:#364e63;--theme-border:#28354226;--theme-soft:#26344109;--theme-control:#e8ebed;--theme-selected:#fff;--theme-highlight:#364e63}
+.theme-switch,.theme-controls{display:inline-flex;align-items:center;gap:3px;padding:3px;border:1px solid var(--theme-border);border-radius:24px;background:var(--theme-control);flex-shrink:0}
+#darkTheme,#lightTheme{font-size:11px;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:34px;min-width:53px;border-radius:20px;padding:7px 12px;color:var(--muted);transition:background .18s,color .18s,box-shadow .18s}
+#darkTheme[aria-pressed="true"],#lightTheme[aria-pressed="true"]{background:var(--theme-selected);color:var(--ink);box-shadow:0 1px 5px #0000001a,inset 0 1px 0 #ffffff12}
+#darkTheme svg,#lightTheme svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5}
+#darkTheme:hover,#lightTheme:hover{color:var(--ink)}
+.bubble-node{outline:none;cursor:pointer}.bubble-node:focus-visible>rect{stroke:var(--accent)!important;stroke-width:2.2!important}.bubble-text{pointer-events:none}.bubble-edge{pointer-events:none}
+
+html[data-theme="light"] body{background:radial-gradient(ellipse at 50% 30%,#fff 0,transparent 58%),var(--bg);color:var(--ink)}
+html[data-theme="light"] .topbar{border-bottom-color:#28354217}
+html[data-theme="light"] #brandLogo{filter:invert(1) grayscale(1);mix-blend-mode:multiply}
+html[data-theme="light"] .top-label{color:#69717b}
+html[data-theme="light"] .quiet{color:#455260}
+html[data-theme="light"] .quiet:hover{color:#101923}
+html[data-theme="light"] button:focus-visible,html[data-theme="light"] a:focus-visible,html[data-theme="light"] select:focus-visible{outline-color:#476883}
+html[data-theme="light"] .eyebrow{color:#526273}
+html[data-theme="light"] .status-light{background:#465f76;box-shadow:0 0 8px #647c9329}
+html[data-theme="light"] h1 span{background:linear-gradient(100deg,#272e36,#7b848d);background-clip:text;-webkit-background-clip:text;color:transparent}
+html[data-theme="light"] .instrument{border-color:#28354223;background:linear-gradient(120deg,#ffffffa8,#ffffff30);box-shadow:0 28px 90px #5a6b7b12}
+html[data-theme="light"] .instrument-head{border-bottom-color:#28354214}
+html[data-theme="light"] .segmented{background:#e8ebee;border-color:#23313f12}
+html[data-theme="light"] .segmented button{color:#5a6572}
+html[data-theme="light"] .segmented button[aria-pressed="true"]{background:linear-gradient(#fff,#f8f9fa);color:#222d38;box-shadow:0 1px 4px #2533421c,inset 0 1px 0 #ffffffd9}
+html[data-theme="light"] .separator{background:#28354226}
+html[data-theme="light"] .speed-label{color:#5b6875}
+html[data-theme="light"] .speed-label select{color:#344b60}
+html[data-theme="light"] .speed-label option{background:#fff;color:#243443}
+html[data-theme="light"] .canvas-wrap{background:radial-gradient(ellipse at 50% 70%,#c2ccd220,transparent 50%);scrollbar-color:#a5adb5 transparent}
+html[data-theme="light"] .canvas-glow{background-image:radial-gradient(#6c7d9236 .7px,transparent .7px)}
+html[data-theme="light"] .canvas-caption{color:#5e6b7a}
+html[data-theme="light"] .signal i{background:#475d71;box-shadow:0 0 7px #627d9824}
+html[data-theme="light"] .signal-note{color:#6d7884}
+html[data-theme="light"] .owner-strip{border-top-color:#2835421c;background:#e9edef52}
+html[data-theme="light"] .owner-label{color:#364554}
+html[data-theme="light"] .owner-label span{color:#627181}
+html[data-theme="light"] .milestone{border-color:#8292a14d;color:#5b6b7b;background:#ffffff65}
+html[data-theme="light"] .milestone.in-stage{border-color:#526d8890;color:#314c65;background:#e6edf3}
+html[data-theme="light"] .milestone.selected{background:#354b5e;border-color:#354b5e;color:#fff;box-shadow:0 0 14px #344b631b}
+html[data-theme="light"] .milestone-hint{color:#475c70}
+html[data-theme="light"] .stage-nav{border-bottom-color:#28354224}
+html[data-theme="light"] .stage-nav button{color:#63707d}
+html[data-theme="light"] .stage-nav button span{color:#75818d}
+html[data-theme="light"] .stage-nav button.active{color:#1f2d3a;border-color:#405c75}
+html[data-theme="light"] .stage-nav button.active span{color:#405c75}
+html[data-theme="light"] .detail-summary{color:#536170}
+html[data-theme="light"] .budget span{color:#6d7884}
+html[data-theme="light"] .budget b{color:#35495c}
+html[data-theme="light"] .group-card{background:linear-gradient(145deg,#ffffffb0,#ffffff60);border-color:#34475722}
+html[data-theme="light"] .group-card.selected{border-color:#5578958c;background:linear-gradient(145deg,#e5edf4b3,#ffffffad)}
+html[data-theme="light"] .group-card h3{color:#2c3e50}
+html[data-theme="light"] .group-kind{color:#667787}
+html[data-theme="light"] .group-card li{color:#485b6c}
+html[data-theme="light"] .group-card li:before{background:#586f83;box-shadow:none}
+html[data-theme="light"] .group-card ol li:not(:last-child):after{background:#637b9340}
+html[data-theme="light"] .loop-note{color:#5a6c7d;border-top-color:#3447571c}
+html[data-theme="light"] .group-note{border-left-color:#607b9290;color:#536475}
+html[data-theme="light"] .deliverable{border-top-color:#3447571c}
+html[data-theme="light"] .micro-label{color:#667787}
+html[data-theme="light"] .deliverable p{color:#455c71}
+html[data-theme="light"] .all-section,html[data-theme="light"] .all-stage{border-top-color:#34475720}
+html[data-theme="light"] .all-toggle{color:#435c71}
+html[data-theme="light"] .all-groups h4{color:#344c61}
+html[data-theme="light"] .all-groups p{color:#51667a}
+html[data-theme="light"] .all-groups .small{color:#63798c}
+html[data-theme="light"] footer{border-top-color:#3447571a;color:#5d6c7b}
+html[data-theme="light"] .footer-brand{color:#3c5368}
+html[data-theme="light"] .toast{background:#fff;color:#304a60;border-color:#748ea355;box-shadow:0 12px 38px #344b6328}
+
+/* Compatibility with the compact overview and individual-stage SVG diagrams. */
+html[data-theme="light"] #diagram #metal stop:nth-child(1){stop-color:#fff}
+html[data-theme="light"] #diagram #metal stop:nth-child(2){stop-color:#f5f6f7}
+html[data-theme="light"] #diagram #metal stop:nth-child(3){stop-color:#e7ebee}
+html[data-theme="light"] #diagram #activeMetal stop:nth-child(1){stop-color:#fff}
+html[data-theme="light"] #diagram #activeMetal stop:nth-child(2){stop-color:#e8eef3}
+html[data-theme="light"] #diagram #activeMetal stop:nth-child(3){stop-color:#dbe3ea}
+html[data-theme="light"] #diagram #coreMetal stop:nth-child(1){stop-color:#fff}
+html[data-theme="light"] #diagram #coreMetal stop:nth-child(2){stop-color:#f7f8f9}
+html[data-theme="light"] #diagram #coreMetal stop:nth-child(3){stop-color:#e7ebef}
+html[data-theme="light"] #diagram #coreMetal stop:nth-child(4){stop-color:#d3dbe2}
+html[data-theme="light"] #diagram image{filter:invert(1) grayscale(1);mix-blend-mode:multiply}
+html[data-theme="light"] .wire{stroke:#7d8f9e91}
+html[data-theme="light"] .wire.active{stroke:#526c84bb}
+html[data-theme="light"] .wire.governance{stroke:#91a0ae80}
+html[data-theme="light"] .node .metal{stroke:#6e809344}
+html[data-theme="light"] .node:hover .metal,html[data-theme="light"] .node:focus-visible .metal{stroke:#47647cbb}
+html[data-theme="light"] .node.selected .metal{stroke:#526d85bb;filter:none}
+html[data-theme="light"] .node .port{fill:#698095;filter:none}
+html[data-theme="light"] .node.selected .port{fill:#3b546c}
+html[data-theme="light"] .node-title{fill:#25394b}
+html[data-theme="light"] .node-en{fill:#586c7e}
+html[data-theme="light"] .node-num{fill:#5d7488}
+html[data-theme="light"] .node.selected .node-num{fill:#324f69}
+html[data-theme="light"] .node-icon{stroke:#536a7e}
+html[data-theme="light"] .node-icon-back{fill:#526a8010;stroke:#526a8030}
+html[data-theme="light"] .port-mark{fill:#5b7289}
+html[data-theme="light"] .flow-dot{fill:#2a4259;filter:none}
+html[data-theme="light"] .core-body{stroke:#647e9580}
+html[data-theme="light"] .core-body+rect{fill:#ffffff45;stroke:#61788c28}
+html[data-theme="light"] .core-body~circle{fill:#354f66;filter:none}
+html[data-theme="light"] #diagram>rect[fill="url(#coreMetal)"]{stroke:#647e9580}
+html[data-theme="light"] .core-pin{stroke:#708398}
+html[data-theme="light"] .core-sub{fill:#596f82}
+html[data-theme="light"] .graph-label{fill:#607486}
+html[data-theme="light"] .branch-label{fill:#31495d}
+html[data-theme="light"] .branch-count{fill:#5e768b}
+html[data-theme="light"] .map-controls button{background:#ffffff7a}
+html[data-theme="light"] .map-controls button:hover{background:#dce5ee75}
+html[data-theme="light"] .map-controls button[aria-pressed="true"]{background:#e1e9f1;border-color:#637f986b}
+html[data-theme="light"] .bubble-node:hover>rect,html[data-theme="light"] .bubble-node:focus-visible>rect{filter:drop-shadow(0 2px 5px #55728b20)}
+@media(max-width:600px){.theme-switch,.theme-controls{padding:2px}#darkTheme,#lightTheme{min-width:42px;padding:7px 9px;font-size:10px;min-height:32px}}
+@media(prefers-reduced-motion:reduce){#darkTheme,#lightTheme{transition:none}}
+</style><style>/* Let the architecture use the screen width instead of shrinking into a short frame. */
+main{max-width:none;padding:0 clamp(18px,2.5vw,64px)}.topbar{padding-inline:clamp(18px,2.5vw,64px);height:82px}.intro{padding:36px 0 30px;gap:28px;max-width:none}.intro .eyebrow{margin-bottom:12px}h1{font-size:clamp(32px,2.7vw,54px)}.instrument{margin-top:0;overflow:clip}.instrument-head{padding:14px 20px}.map-toolbar{position:sticky;top:0;z-index:6;background:var(--bg);padding:12px 20px}.map-controls button{font-size:11px}.all-mode .canvas-wrap{height:calc(100dvh - 190px);min-height:500px;max-height:none}.all-mode .canvas-wrap.map-width{height:auto;min-height:0;overflow:hidden;cursor:default}.all-mode .canvas-wrap.map-fitted{height:calc(100dvh - 190px);min-height:500px}.all-mode .canvas-wrap.map-width #diagram{margin:0}.all-mode .canvas-wrap #diagram{height:auto}.all-mode .canvas-caption{padding:16px 20px}.detail-section,.all-section{max-width:1450px;margin-inline:auto}.brand{display:flex;flex-direction:column;align-items:flex-start;gap:0}.brand-wordmark{font-size:30px;font-weight:750;font-family:Arial,Helvetica,sans-serif;letter-spacing:-.7px;line-height:1.08}.brand-tagline{font-size:11px;letter-spacing:.065em;line-height:1.6;margin-top:5px;color:var(--muted)}.core-wordmark{fill:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:25px;font-weight:700;letter-spacing:.4px}.core-tagline{fill:var(--muted);font-size:10px;letter-spacing:.3px}.node-en{font-family:Arial,sans-serif;font-size:8px;letter-spacing:0;fill:var(--muted)}.branch-en{font-family:Arial,sans-serif;font-size:9px;fill:var(--muted);letter-spacing:0}.detail-en{display:block;font-family:Arial,sans-serif;font-size:11px;color:var(--muted);font-weight:400;line-height:1.55;margin-top:3px}.instrument:fullscreen{overflow:auto;padding:0 18px;background:var(--bg)}.instrument:fullscreen .canvas-wrap{height:calc(100dvh - 210px);min-height:300px}.instrument:fullscreen .canvas-wrap.map-width{min-height:0}.instrument:fullscreen .map-toolbar{top:0}.canvas-caption,.owner-strip{background:var(--bg)}
+@media(min-width:1800px){.intro{padding-top:38px;padding-bottom:34px}.map-toolbar{font-size:12px}.instrument-actions .quiet{font-size:13px}.segmented button{font-size:12px}.top-label{font-size:10px}}
+@media(max-width:1050px){.topbar{height:auto;min-height:82px;padding-block:12px}.map-toolbar{gap:9px}.all-mode .canvas-wrap:not(.map-width){height:65dvh;min-height:420px}}
+@media(max-width:600px){main{padding:0 14px}.topbar{padding:12px 18px;gap:10px}.brand-wordmark{font-size:27px}.brand-tagline{font-size:9px;letter-spacing:.03em}.top-actions{max-width:154px}.intro{padding:28px 4px 24px}.intro>p{margin-top:15px}.instrument{margin:0}.instrument-head{padding:12px}.map-toolbar{position:static;padding:12px}.map-controls button{font-size:10px}.all-mode .canvas-wrap.map-fitted{height:390px;min-height:390px}.all-mode .canvas-wrap.map-width{min-height:0}.all-mode .canvas-wrap:not(.map-width):not(.map-fitted){height:500px;min-height:500px}.detail-en{font-size:12px}.all-mode .canvas-caption{padding:13px}.instrument:fullscreen .canvas-wrap:not(.map-width){height:calc(100dvh - 330px);min-height:280px}.node-en{letter-spacing:0}}
+</style><style>/* Related knowledge: a quiet reading layer alongside the project map. */
+:root{
+  --resource-surface:#141518;
+  --resource-control:#1c1d21;
+  --resource-line:#ffffff16;
+  --resource-ink:#ececee;
+  --resource-muted:#a4a5ac;
+  --resource-soft:#ffffff08;
+  --resource-hover:#ffffff0e;
+  --resource-shadow:0 24px 100px #00000065;
+}
+html[data-theme="light"]{
+  --resource-surface:#fafaf9;
+  --resource-control:#f0f0ee;
+  --resource-line:#24242720;
+  --resource-ink:#242427;
+  --resource-muted:#646469;
+  --resource-soft:#24242704;
+  --resource-hover:#24242708;
+  --resource-shadow:0 24px 100px #20202425;
+}
+.resource-dialog{
+  position:fixed;
+  inset:24px 24px 24px auto;
+  width:560px;
+  max-width:90vw;
+  height:calc(100vh - 48px);
+  height:calc(100dvh - 48px);
+  max-height:none;
+  margin:0;
+  padding:0;
+  border:1px solid var(--resource-line);
+  border-radius:22px;
+  background:var(--resource-surface);
+  color:var(--resource-ink);
+  box-shadow:var(--resource-shadow);
+  overflow:hidden;
+  overscroll-behavior:contain;
+}
+.resource-dialog[open]{display:flex;flex-direction:column}
+.resource-dialog:not([open]){display:none}
+.resource-dialog::backdrop{background:#08090c80;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.resource-dialog-head{position:relative;flex:0 0 auto;padding:30px 84px 20px 30px}
+.resource-dialog-head .eyebrow{margin:0 0 12px;font-size:9px;letter-spacing:.15em;color:var(--resource-muted);line-height:1.7}
+.resource-dialog-head h2{font-size:27px;letter-spacing:-.025em;line-height:1.4;overflow-wrap:anywhere}
+#resourceContext{margin-top:10px;color:var(--resource-muted);font-size:12px;line-height:1.8;overflow-wrap:anywhere}
+.resource-close{position:absolute;top:20px;right:18px;display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:8px;border:1px solid var(--resource-line);border-radius:50%;background:var(--resource-soft);color:var(--resource-ink);font-size:22px;line-height:1;transition:background .18s}
+.resource-close:hover{background:var(--resource-hover)}
+.resource-browser{flex:0 0 auto;padding:0 30px 16px;border-bottom:1px solid var(--resource-line)}
+#resourceSearch{display:block;width:100%;min-height:48px;padding:12px 15px;border:1px solid var(--resource-line);border-radius:11px;background:var(--resource-control);color:var(--resource-ink);font:inherit;font-size:16px;line-height:1.4;appearance:none;-webkit-appearance:none}
+#resourceSearch::placeholder{color:var(--resource-muted);opacity:1}
+#resourceSearch:focus-visible{outline:2px solid var(--resource-muted);outline-offset:3px}
+.resource-filters{display:flex;flex-wrap:wrap;gap:4px 5px;margin-top:12px}
+.resource-filters button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 12px;border:1px solid transparent;border-radius:9px;color:var(--resource-muted);font-size:11px;line-height:1.5;transition:background .18s,color .18s,border-color .18s}
+.resource-filters button:hover{background:var(--resource-hover);color:var(--resource-ink)}
+.resource-filters button[aria-pressed="true"]{border-color:var(--resource-line);background:var(--resource-control);color:var(--resource-ink)}
+.resource-count{margin-top:8px;color:var(--resource-muted);font-size:10px;line-height:1.7;letter-spacing:.015em}
+.resource-list{flex:1 1 auto;min-height:0;padding:0 30px;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--resource-line) transparent;scroll-padding-block:20px;-webkit-overflow-scrolling:touch}
+.resource-card{padding:23px 0 22px;border-bottom:1px solid var(--resource-line)}
+.resource-card:last-child{border-bottom:0}
+.resource-card-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin-bottom:9px;color:var(--resource-muted);font-size:10px;line-height:1.7}
+.resource-card-meta .category{padding:2px 7px;border-radius:5px;background:var(--resource-control);color:var(--resource-muted)}
+.resource-card-meta .source{overflow-wrap:anywhere}
+.resource-card h3{font-size:16px;line-height:1.65;font-weight:500;letter-spacing:-.01em;color:var(--resource-ink);overflow-wrap:anywhere}
+.resource-card-link{display:flex;align-items:center;min-height:44px;text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px}
+.resource-card-link:hover{text-decoration:underline}
+.resource-card>p{margin-top:8px;font-size:12px;line-height:1.9;color:var(--resource-muted);overflow-wrap:anywhere}
+.resource-card-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.resource-open,.resource-copy{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 13px;border-radius:8px;font-size:11px;line-height:1.5;transition:background .18s,color .18s}
+.resource-open{border:1px solid var(--resource-line);background:var(--resource-soft);color:var(--resource-ink)}
+.resource-copy{border:1px solid transparent;color:var(--resource-muted)}
+.resource-open:hover,.resource-copy:hover{background:var(--resource-hover);color:var(--resource-ink)}
+.resource-footnote{flex:0 0 auto;margin:0;padding:15px 30px 19px;border-top:1px solid var(--resource-line);font-size:10px;line-height:1.8;color:var(--resource-muted);background:var(--resource-surface)}
+#showAllResources:not([hidden]){display:flex;align-items:center;min-height:44px;padding:8px 0;color:var(--resource-ink);font-size:11px}
+.resource-empty{padding:46px 12px;text-align:center;color:var(--resource-muted);font-size:12px;line-height:1.9}
+.resource-dialog button:focus-visible,.resource-dialog a:focus-visible{outline:2px solid var(--resource-muted);outline-offset:3px}
+.resource-node-badge{pointer-events:none}
+.bubble-node.has-resource:hover>rect,.bubble-node.has-resource:focus-visible>rect{stroke:var(--accent);stroke-width:2.5}
+.resource-item-button{display:inline-flex;align-items:center;min-height:44px;padding:6px 9px;margin:2px 0 0 -9px;border-radius:7px;font-size:10px;line-height:1.5;color:var(--muted);vertical-align:middle;transition:background .18s,color .18s}
+.resource-item-button:hover{background:var(--resource-hover);color:var(--ink)}
+.resource-group-links{margin-top:12px;padding-top:10px;border-top:1px solid var(--theme-border)}
+.resource-group-button{display:inline-flex;align-items:center;min-height:44px;max-width:100%;padding:8px 10px;margin-left:-10px;border-radius:8px;color:var(--ink);font-size:11px;line-height:1.7;text-align:left;transition:background .18s}
+.resource-group-button:hover{background:var(--resource-hover)}
+#resourceLibraryBtn{white-space:nowrap}
+.resource-legend{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px;color:var(--muted);font-size:10px;line-height:1.7}
+.resource-legend svg{width:14px;height:14px;flex-shrink:0;color:var(--muted)}
+.resource-legend::before{content:'↗';display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border:1px solid var(--theme-border);border-radius:50%;color:var(--ink);font-size:9px;line-height:1}
+@media(max-width:760px){
+  .top-actions{gap:6px;flex-wrap:wrap;justify-content:flex-end}
+  .top-actions .quiet{min-height:44px;white-space:nowrap}
+}
+@media(max-width:600px){
+  .topbar{height:auto;align-items:center;gap:12px;padding-block:15px 10px}
+  .top-actions{flex:1 0 100%;width:100%;max-width:none;justify-content:flex-end;gap:4px}
+  .top-actions .theme-switch,.top-actions .theme-controls{margin-right:auto}
+  .top-actions .quiet{min-height:44px;padding:7px 8px;font-size:10px}
+  .top-actions .quiet>span{margin-left:7px}
+  .top-actions #darkTheme,.top-actions #lightTheme{min-height:40px}
+  .resource-dialog{inset:auto 7px 0;width:calc(100% - 14px);max-width:none;height:calc(100vh - 20px);height:calc(100dvh - 20px);max-height:none;border-bottom:0;border-radius:20px 20px 0 0}
+  .resource-dialog-head{padding:25px 70px 16px 22px}
+  .resource-dialog-head .eyebrow{font-size:8px;letter-spacing:.11em;margin-bottom:9px}
+  .resource-dialog-head h2{font-size:24px}
+  .resource-close{top:16px;right:14px}
+  #resourceContext{margin-top:8px;font-size:11px}
+  .resource-browser{padding:0 20px 13px}
+  .resource-filters{margin-top:9px;gap:2px}
+  .resource-filters button{padding-inline:10px;font-size:10px}
+  .resource-list{padding-inline:22px}
+  .resource-card{padding-block:20px}
+  .resource-card h3{font-size:15px}
+  .resource-card>p{font-size:12px}
+  .resource-footnote{padding:12px 22px max(16px,env(safe-area-inset-bottom));font-size:9px}
+  .resource-legend{margin-top:7px;font-size:9px}
+}
+@media(max-height:560px){
+  .resource-dialog{overflow:auto}
+  .resource-dialog-head{position:sticky;top:0;z-index:2;background:var(--resource-surface)}
+  .resource-list{flex:0 0 auto;min-height:180px;overflow:visible}
+  .resource-filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}
+  .resource-filters button{flex-shrink:0}
+  .resource-dialog-head{padding-top:16px;padding-bottom:12px}
+  .resource-dialog-head .eyebrow{margin-bottom:4px}
+  .resource-dialog-head h2{font-size:22px}
+  .resource-close{top:11px}
+  #resourceContext{margin-top:5px}
+  .resource-browser{padding-bottom:10px}
+  .resource-filters{margin-top:5px}
+  .resource-count{margin-top:3px}
+  .resource-footnote{padding-top:10px;padding-bottom:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  .resource-dialog *,.resource-item-button,.resource-group-button{transition:none!important}
+}
+</style></head><body>
+<header class="topbar"><a class="brand" href="#" aria-label="海本精管首页"><span class="brand-wordmark">HIBORN</span><span class="brand-tagline">高标装修全过程管理</span></a><span class="top-label">PROJECT MANAGEMENT SYSTEM</span><div class="top-actions"><div class="theme-switch" role="group" aria-label="切换页面黑白主题"><button id="darkTheme" aria-pressed="true">深色</button><button id="lightTheme" aria-pressed="false">浅色</button></div><button id="resourceLibraryBtn" class="quiet" aria-haspopup="dialog">相关资料 ↗</button><button id="exportBtn" class="quiet">导出气泡总图 <span>↗</span></button></div></header>
+<main><section class="intro"><div><div class="eyebrow"><span class="status-light"></span> HIBORN · 高标装修全过程管理</div><h1>把复杂，<span>连接成秩序。</span></h1></div><p>从设计意图，到真实生活。<br>每一个专业协同，每一次交接，都有迹可循。</p></section>
+<section class="instrument" aria-label="全过程动态流程图"><div class="instrument-head"><div class="segmented" aria-label="流程视图"><button id="allGraphBtn" aria-pressed="true">全量气泡图</button><button id="overviewBtn" aria-pressed="false">阶段总览</button><button id="focusBtn" aria-pressed="false">阶段展开</button></div><div class="instrument-actions"><button id="tourBtn" class="quiet">▷ 逐阶段演示</button><span class="separator"></span><button id="motionBtn" class="quiet" aria-pressed="true">Ⅱ 暂停光点</button><label class="speed-label">速度 <select id="speedSelect" aria-label="光点速度"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.8">1.8×</option></select></label></div></div>
+<div class="map-toolbar" id="mapToolbar"><span id="mapCount">全部工作气泡同时展开</span><div class="map-controls"><button id="zoomOut" aria-label="缩小全图">−</button><span id="zoomValue">适应</span><button id="zoomIn" aria-label="放大全图">＋</button><button id="widthMap" aria-pressed="true">铺满宽度</button><button id="fitMap">一屏全图</button><button id="readMap">清晰阅读</button><button id="focusMap">定位本阶段</button><button id="fullscreenBtn">全屏 ↗</button></div></div>
+<div class="canvas-wrap" id="canvasWrap"><svg id="diagram" viewBox="0 0 1440 510" role="group" aria-label="七阶段顺序流程与海本精管统筹连接"></svg><div class="canvas-glow"></div></div><div class="canvas-caption"><span id="viewHint">点击阶段，查看工作内容与业主参与节点</span><span class="signal"><i></i> <span id="signalLabel">协同流动</span><span class="signal-note">· 流程示意</span></span></div>
+<div class="owner-strip"><div class="owner-label">业主参与<span>09 个重要节点</span></div><div id="milestoneNav" class="milestones" aria-label="业主参与节点"></div><div id="milestoneHint" class="milestone-hint">选择编号，查看参与时刻</div></div></section>
+<section class="detail-section" id="detailSection"><nav id="stageNav" class="stage-nav" aria-label="阶段导航"></nav><div class="detail-head"><div><div id="detailEyebrow" class="eyebrow"></div><h2 id="detailTitle"></h2></div><div class="detail-summary"><p id="detailSummary"></p><div class="budget"><span>管理关注</span><b id="budgetLabel"></b></div></div></div><div id="groupList" class="group-list"></div><div class="deliverable"><span class="micro-label">STAGE OUTPUT / 阶段结果</span><p id="resultText"></p><button id="nextStage" class="quiet">下一阶段 →</button></div></section>
+<section class="all-section"><button id="allToggle" aria-expanded="false" class="all-toggle"><span>查看完整流程文字</span><span id="allSymbol">＋</span></button><div id="allContent" hidden></div></section>
+</main><footer><div><span class="footer-brand">HIBORN</span><span>海本精管 · 全过程咨询与管理</span></div><span>DESIGN INTENT → LIVING EXPERIENCE</span></footer><div class="toast" id="toast" role="status"></div><div class="sr-only" id="announcement" aria-live="polite"></div>
+<script>const FLOW = [
+{id:'design',en:'DESIGN',name:'前期设计',title:'先对齐需求，再定义空间。',caption:'需求 · 设计 · 客户确认',budget:'装修预算',milestones:[1,2,3,4],summary:'由业主需求出发，完成设计师选择、布局与效果确认，形成可供后续深化的施工图。',groups:[
+{name:'需求与设计师',kind:'sequence',items:['业主沟通设计需求，形成设计标书','业主指定设计师 / 推荐合适设计师库，由业主筛选','洽谈设计方案']},
+{name:'功能与布局',kind:'sequence',items:['提供功能需求','出具平面布局图','确认布局图'],loop:'若需求不符，返回功能需求重新调整。'},
+{name:'风格与效果',kind:'sequence',items:['提供风格需求','出具效果图','确认效果图'],loop:'需求不符时返回调整。'},
+{name:'图纸确认',kind:'sequence',items:['绘制施工图','客户确认']}],result:'确认后的设计需求、平面布局、效果图与施工图'},
+{id:'civil',en:'CIVIL WORK',name:'土建施工',title:'把基础条件，落实到现场。',caption:'招标 · 报价 · 施工方',budget:'控制土建预算',milestones:[5,6],summary:'土建施工方与基础装修方分别确认，在施工前协调方案、完成面和现场尺寸。',groups:[
+{name:'土建施工方确认',kind:'sequence',items:['土建施工招标','报价','确定土建施工方']},
+{name:'土建施工内容',kind:'parallel',items:['拆除工程','结构加固','一次放线（方中轴＋一米线）','搭建','新建墙体','楼梯']},
+{name:'基础装修方确认 · 独立流程',kind:'sequence',items:['基础装修招标','核对报价与辅材单','确定基础装修方']}],note:'提前确定基础施工方案，从完成面来控制土建施工尺寸。',result:'明确施工方、基础方案、报价与辅材清单'},
+{id:'coordination',en:'COORDINATION',name:'主材统筹',full:'基础装修 · 主材统筹',title:'让所有专业，先在图纸上相遇。',caption:'木作 · 智能 · 设备 · 洁具',budget:'控制主材预算',milestones:[7],summary:'采购主材与跨专业深化同步协调，将各类接口汇入图纸会签，经业主确认后进行现场交底。',groups:[
+{name:'木作方',kind:'parallel',items:['衣柜、衣帽间','鞋柜、玄关柜','餐边柜、电视柜','书柜、书桌、榻榻米','阳台柜、洗衣柜','橱柜柜体','入户柜、储藏柜']},
+{name:'智能方',kind:'parallel',items:['智能窗帘','智能灯光','智能开关、插座','全屋网络覆盖','安防预留','空调、地暖智能调节','全屋传感报警系统']},
+{name:'设备类',kind:'parallel',items:['空调、新风、五恒（六恒）','锅炉、热水器']},
+{name:'特殊电器',kind:'parallel',items:['电视','蒸烤箱','洗碗机','扫地机器人']},
+{name:'洁具形式',kind:'parallel',items:['马桶排水：直排 / 墙排','花洒形式：明装 / 暗装','地漏形式：方形、线性、三角或条形','各部位预埋件']},
+{name:'深化',kind:'sequence',items:['深化图纸与室内设计施工图、图层整合','各专业会签，经业主确认','现场交底'],loop:'如有错、碰、漏，返回深化图纸调整。'}],result:'会签确认的综合深化图纸与现场交底'},
+{id:'construction',en:'EXECUTION',name:'现场实施',full:'基础装修 · 现场实施',title:'每一次交接，都有验收依据。',caption:'水电 · 防水 · 木工 · 瓦工 · 油工',budget:'控制基础装修预算',milestones:[8],summary:'基础装修各工种按现场条件组织实施，分别验收、问题整改，再进入后续工序。',groups:[
+{name:'水电 → 水电验收',kind:'parallel',items:['一次放线（放中轴线＋一米线）','弹线开槽','布管穿线（电）＋布管走水（水）','水电隐蔽工程','封槽、修补']},
+{name:'防水',kind:'parallel',items:['防水施工']},
+{name:'木工 → 木工验收',kind:'parallel',items:['吊顶木龙骨','窗帘盒、吊顶造型','背景墙木基层','门套基层、房门','木饰面、护墙板基层']},
+{name:'瓦工 → 瓦工验收',kind:'parallel',items:['基层处理','湿区归方抹灰（水泥砂浆）','铺贴瓷砖、岩板','特殊造型类']},
+{name:'油工 → 油工验收',kind:'parallel',items:['基层处理','挂网防开裂处理','墙面冲筋归方','批刮腻子','打磨','刷漆、喷涂（甲供）']}],note:'需业主、设计师、施工方、各深化专业联合验收；有问题返回整改。',result:'各工种验收与整改闭环'},
+{id:'installation',en:'INSTALLATION',name:'安装调试',title:'让每个部件，成为完整体验。',caption:'安装 · 系统调试 · 整改闭环',budget:'安装与交接协调',milestones:[],summary:'开荒保洁后安排安装，协调各专业的进场和交接，通过收尾调试完成问题闭环。',groups:[
+{name:'安装前',kind:'sequence',items:['开荒保洁','安装']},
+{name:'安装内容',kind:'parallel',items:['美缝（甲供）','全屋定制木作','空调出风口、新风出风口、浴霸、凉霸','厨卫五金、卫浴','厨房电器','灯具、开关','窗帘','木地板、踢脚线','分支主题（待确认 · 原图保留）']},
+{name:'收尾',kind:'sequence',items:['收尾调试'],loop:'有问题返回对应安装项目整改，再复核。'}],result:'安装完成、系统调试与问题闭环'},
+{id:'styling',en:'STYLING',name:'软装陈设',title:'从空间完成，到生活发生。',caption:'家具 · 织物 · 艺术 · 日常',budget:'控制软装装修预算',milestones:[],summary:'以软装摆场统筹家具、织物、陈设与日常物件，协调空间关系和最终呈现。',groups:[
+{name:'软装摆场 · 并列内容',kind:'parallel',items:['家具类','布艺织物','装饰画与墙面装饰','花艺绿植','摆件饰品','厨卫小件','可移动家电数码']}],result:'完成软装摆场与空间呈现'},
+{id:'handover',en:'AFTERCARE',name:'交付售后',title:'交付之后，管理仍在延续。',caption:'保洁 · 验收 · 售后维护',budget:'决算',milestones:[9],summary:'完成最终保洁与业主验收，进入售后与维护；决算作为独立的费用管理事项。',groups:[
+{name:'交付与维护',kind:'sequence',items:['最终保洁','验收','售后与维护']},
+{name:'费用管理',kind:'parallel',items:['决算']}],result:'最终验收与售后维护安排'}
+];
+const MILESTONES=[{id:1,stage:0,title:'需求与设计标书',desc:'沟通设计需求，参与设计师选择。'},{id:2,stage:0,title:'确认布局图',desc:'核对功能需求与平面布局；不符时调整。'},{id:3,stage:0,title:'确认效果图',desc:'核对风格需求与效果呈现；不符时调整。'},{id:4,stage:0,title:'施工图客户确认',desc:'绘制施工图后，由客户确认。'},{id:5,stage:1,title:'确定土建施工方',desc:'完成招标与报价，确定施工方。'},{id:6,stage:1,title:'确定基础装修方',desc:'核对报价、辅材单与基础施工方案。'},{id:7,stage:2,title:'深化图纸联合确认',desc:'各专业会签，业主确认后现场交底。'},{id:8,stage:3,title:'工种阶段联合验收',desc:'水电、木工、瓦工、油工分别验收，问题整改闭环。'},{id:9,stage:6,title:'最终验收',desc:'最终保洁后验收，再进入售后与维护。'}];
+</script><script>/* Shared screen/export palette. This file has no external dependencies. */
+(function () {
+  'use strict';
+  var KEY = 'hiborn-flow-theme';
+  var palettes = {
+    dark: {
+      bg: '#090b0f', bg2: '#15191f',
+      node1: '#333942', node2: '#20252d', node3: '#141920',
+      line: '#4f5e70', lineStrong: '#8d9fb3',
+      ink: '#edf1f6', muted: '#a7b3c2', subtle: '#7d8a9b',
+      accent: '#c3d7e9', dot: '#f3f8ff', shadow: '#000000', loop: '#a3b2c5'
+    },
+    light: {
+      bg: '#f5f5f3', bg2: '#e9ebed',
+      node1: '#ffffff', node2: '#f2f3f4', node3: '#e7eaed',
+      line: '#8b95a0', lineStrong: '#526373',
+      ink: '#20262d', muted: '#515e6b', subtle: '#626e7b',
+      accent: '#364e63', dot: '#273e52', shadow: '#adb6bf', loop: '#5c6c7d'
+    }
+  };
+  var theme = 'dark';
+  try {
+    if (localStorage.getItem(KEY) === 'light') theme = 'light';
+  } catch (_) { /* Private browsing and file:// may block storage. */ }
+
+  function palette(requestedTheme) {
+    var chosen = requestedTheme === 'dark' || requestedTheme === 'light' ? requestedTheme : theme;
+    return Object.assign({}, palettes[chosen]);
+  }
+  function updateControls() {
+    ['dark', 'light'].forEach(function (name) {
+      var button = document.getElementById(name + 'Theme');
+      if (button) {
+        button.setAttribute('aria-pressed', String(name === theme));
+        button.setAttribute('aria-label', name === 'dark' ? '切换深色背景' : '切换浅色背景');
+        button.title = name === 'dark' ? '深色 · 沉浸展示' : '浅色 · 清晰阅读';
+      }
+    });
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', palette().bg);
+  }
+  function set(value) {
+    if (value !== 'dark' && value !== 'light') return theme;
+    var changed = theme !== value;
+    theme = value;
+    document.documentElement.dataset.theme = theme;
+    try { localStorage.setItem(KEY, theme); } catch (_) {}
+    updateControls();
+    if (changed) {
+      window.dispatchEvent(new CustomEvent('hbthemechange', { detail: { theme: theme, palette: palette() } }));
+    }
+    return theme;
+  }
+
+  window.HBTheme = { get: function () { return theme; }, set: set, palette: palette };
+  document.documentElement.dataset.theme = theme;
+  function init() {
+    ['dark', 'light'].forEach(function (name) {
+      var button = document.getElementById(name + 'Theme');
+      if (button) button.addEventListener('click', function () { set(name); });
+    });
+    updateControls();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+  else init();
+}());
+</script><script>/* English subtitles shared by every diagram view and export. */
+const TRANSLATIONS = Object.freeze({
+  '高标装修全过程管理': 'End-to-End Management for High-Standard Interiors',
+  '海本精管': 'HIBORN',
+  '全过程咨询与管理': 'End-to-End Project Consultancy & Management',
+  '全过程落地管理': 'End-to-End Project Delivery',
+  '阶段结果汇总': 'Stage Deliverables',
+  '专业协调 · 核对与交接': 'Trade Coordination · Review & Handover',
+  '全量流程架构': 'Complete Process Map',
+  '业主参与节点': 'Client Milestones',
+  '顺序推进': 'Sequential Steps',
+  '顺序推进 ↓': 'Sequential Steps',
+  '并列统筹': 'Parallel Coordination',
+  '独立流程': 'Separate Process',
+  '并列内容': 'Parallel Scope',
+  '前期设计': 'Design & Planning',
+  '土建施工': 'Civil Works',
+  '主材统筹': 'Materials & Systems Coordination',
+  '基础装修 · 主材统筹': 'Core Fit-Out · Materials Coordination',
+  '现场实施': 'Site Execution',
+  '基础装修 · 现场实施': 'Core Fit-Out · Site Execution',
+  '安装调试': 'Installation & Commissioning',
+  '软装陈设': 'Furnishing & Styling',
+  '交付售后': 'Handover & Aftercare',
+  '先对齐需求，再定义空间。': 'Align the Brief. Define the Space.',
+  '把基础条件，落实到现场。': 'Turn Site Requirements into Built Foundations.',
+  '让所有专业，先在图纸上相遇。': 'Coordinate Every Trade Before Work Begins.',
+  '每一次交接，都有验收依据。': 'Clear Acceptance Criteria at Every Handover.',
+  '让每个部件，成为完整体验。': 'Bring Every Component into One Complete Experience.',
+  '从空间完成，到生活发生。': 'From Finished Space to Everyday Living.',
+  '交付之后，管理仍在延续。': 'Support Continues Beyond Handover.',
+  '需求 · 设计 · 客户确认': 'Brief · Design · Client Approval',
+  '招标 · 报价 · 施工方': 'Tender · Quotation · Contractor',
+  '木作 · 智能 · 设备 · 洁具': 'Millwork · Smart Systems · Equipment · Sanitaryware',
+  '水电 · 防水 · 木工 · 瓦工 · 油工': 'Services · Waterproofing · Carpentry · Tiling · Painting',
+  '安装 · 系统调试 · 整改闭环': 'Installation · Commissioning · Defect Resolution',
+  '家具 · 织物 · 艺术 · 日常': 'Furniture · Textiles · Art · Everyday Objects',
+  '保洁 · 验收 · 售后维护': 'Cleaning · Acceptance · Aftercare',
+  '装修预算': 'Renovation Budget',
+  '控制土建预算': 'Civil Works Budget Control',
+  '控制主材预算': 'Materials Budget Control',
+  '控制基础装修预算': 'Core Fit-Out Budget Control',
+  '安装与交接协调': 'Installation & Handover Coordination',
+  '控制软装装修预算': 'Furnishing Budget Control',
+  '需求与设计师': 'Design Brief & Designer',
+  '功能与布局': 'Function & Layout',
+  '风格与效果': 'Style & Visuals',
+  '图纸确认': 'Drawing Approval',
+  '业主沟通设计需求，形成设计标书': 'Define Client Requirements & Design Brief',
+  '业主指定设计师 / 推荐合适设计师库，由业主筛选': 'Client-Appointed Designer or Selection from a Shortlist',
+  '洽谈设计方案': 'Discuss the Design Proposal',
+  '提供功能需求': 'Define Functional Requirements',
+  '出具平面布局图': 'Prepare the Floor Plan',
+  '确认布局图': 'Approve the Floor Plan',
+  '提供风格需求': 'Define Style Preferences',
+  '出具效果图': 'Prepare Design Renderings',
+  '确认效果图': 'Approve Design Renderings',
+  '绘制施工图': 'Prepare Construction Drawings',
+  '客户确认': 'Client Approval',
+  '若需求不符，返回功能需求重新调整。': 'If Requirements Are Unmet, Review and Revise the Brief.',
+  '需求不符时返回调整。': 'Revise If the Proposal Does Not Meet the Brief.',
+  '确认后的设计需求、平面布局、效果图与施工图': 'Approved Brief, Floor Plan, Renderings & Construction Drawings',
+  '土建施工方确认': 'Civil Works Contractor Selection',
+  '土建施工内容': 'Civil Works Scope',
+  '基础装修方确认 · 独立流程': 'Fit-Out Contractor Selection · Separate Process',
+  '基础装修方确认': 'Fit-Out Contractor Selection',
+  '土建施工招标': 'Tender for Civil Works',
+  '报价': 'Quotation',
+  '确定土建施工方': 'Appoint the Civil Works Contractor',
+  '拆除工程': 'Demolition',
+  '结构加固': 'Structural Strengthening',
+  '一次放线（方中轴＋一米线）': 'Initial Setting-Out: Axes & 1 m Datum',
+  '搭建': 'Construction & Assembly',
+  '新建墙体': 'New Wall Construction',
+  '楼梯': 'Staircase',
+  '基础装修招标': 'Tender for Core Fit-Out',
+  '核对报价与辅材单': 'Review Quotation & Ancillary Materials',
+  '确定基础装修方': 'Appoint the Fit-Out Contractor',
+  '提前确定基础施工方案，从完成面来控制土建施工尺寸。': 'Confirm the Base-Build Plan Early; Set Dimensions from Finished Surfaces.',
+  '明确施工方、基础方案、报价与辅材清单': 'Confirmed Contractors, Base-Build Plan, Quotation & Materials',
+  '木作方': 'Millwork Supplier',
+  '智能方': 'Smart Home Integrator',
+  '设备类': 'Building Systems',
+  '特殊电器': 'Specialist Appliances',
+  '洁具形式': 'Sanitaryware Configuration',
+  '深化': 'Detailing',
+  '衣柜、衣帽间': 'Wardrobes & Walk-In Closets',
+  '鞋柜、玄关柜': 'Shoe & Entry Cabinets',
+  '餐边柜、电视柜': 'Sideboards & TV Cabinets',
+  '书柜、书桌、榻榻米': 'Bookcases, Desks & Tatami Platforms',
+  '阳台柜、洗衣柜': 'Balcony & Laundry Cabinets',
+  '橱柜柜体': 'Kitchen Cabinet Carcasses',
+  '入户柜、储藏柜': 'Entrance & Storage Cabinets',
+  '智能窗帘': 'Smart Curtains',
+  '智能灯光': 'Smart Lighting',
+  '智能开关、插座': 'Smart Switches & Sockets',
+  '全屋网络覆盖': 'Whole-Home Network Coverage',
+  '安防预留': 'Security System Provisions',
+  '空调、地暖智能调节': 'Smart AC & Underfloor Heating Control',
+  '全屋传感报警系统': 'Whole-Home Sensors & Alarms',
+  '空调、新风、五恒（六恒）': 'AC, Fresh Air & 5/6-Constant Climate Systems',
+  '锅炉、热水器': 'Boilers & Water Heaters',
+  '电视': 'Television',
+  '蒸烤箱': 'Steam & Convection Oven',
+  '洗碗机': 'Dishwasher',
+  '扫地机器人': 'Robot Vacuum',
+  '马桶排水：直排 / 墙排': 'Toilet Outlet: Floor / Wall',
+  '花洒形式：明装 / 暗装': 'Shower Fittings: Exposed / Concealed',
+  '地漏形式：方形、线性、三角或条形': 'Drain Forms: Square, Linear, Triangular or Strip',
+  '各部位预埋件': 'Embedded Fittings at All Locations',
+  '深化图纸与室内设计施工图、图层整合': 'Integrate Detail Drawings, Interior Drawings & Layers',
+  '各专业会签，经业主确认': 'Cross-Trade Sign-Off & Client Approval',
+  '现场交底': 'Site Technical Briefing',
+  '如有错、碰、漏，返回深化图纸调整。': 'Correct Errors, Clashes and Omissions in the Detail Drawings.',
+  '会签确认的综合深化图纸与现场交底': 'Approved Coordinated Detail Drawings & Site Briefing',
+  '水电 → 水电验收': 'Plumbing & Electrical → Inspection',
+  '水电': 'Plumbing & Electrical',
+  '水电验收': 'Plumbing & Electrical Inspection',
+  '防水': 'Waterproofing',
+  '木工 → 木工验收': 'Carpentry → Inspection',
+  '木工': 'Carpentry',
+  '木工验收': 'Carpentry Inspection',
+  '瓦工 → 瓦工验收': 'Masonry & Tiling → Inspection',
+  '瓦工': 'Masonry & Tiling',
+  '瓦工验收': 'Masonry & Tiling Inspection',
+  '油工 → 油工验收': 'Painting → Inspection',
+  '油工': 'Painting',
+  '油工验收': 'Painting Inspection',
+  '一次放线（放中轴线＋一米线）': 'Initial Setting-Out: Axes & 1 m Datum',
+  '弹线开槽': 'Marking-Out & Chasing',
+  '布管穿线（电）＋布管走水（水）': 'Electrical Conduits & Wiring + Water Pipework',
+  '水电隐蔽工程': 'Concealed Plumbing & Electrical Works',
+  '封槽、修补': 'Chase Filling & Making Good',
+  '防水施工': 'Waterproofing Works',
+  '吊顶木龙骨': 'Timber Ceiling Framing',
+  '窗帘盒、吊顶造型': 'Curtain Pelmets & Ceiling Features',
+  '背景墙木基层': 'Timber Backing for Feature Walls',
+  '门套基层、房门': 'Door Lining Substrates & Internal Doors',
+  '木饰面、护墙板基层': 'Backing for Timber Finishes & Wall Panels',
+  '基层处理': 'Substrate Preparation',
+  '湿区归方抹灰（水泥砂浆）': 'Square & Plaster Wet Areas with Cement Mortar',
+  '铺贴瓷砖、岩板': 'Tile & Sintered Stone Installation',
+  '特殊造型类': 'Special Shaped Features',
+  '挂网防开裂处理': 'Mesh Reinforcement for Crack Control',
+  '墙面冲筋归方': 'Wall Screed Guides & Squaring',
+  '批刮腻子': 'Skim Coat Application',
+  '打磨': 'Sanding',
+  '刷漆、喷涂（甲供）': 'Brush / Spray Painting with Client-Supplied Paint',
+  '需业主、设计师、施工方、各深化专业联合验收；有问题返回整改。': 'Joint Inspection by Client, Designer, Contractor & Specialists; Rectify Defects.',
+  '各工种验收与整改闭环': 'Trade Inspections & Verified Defect Resolution',
+  '安装前': 'Pre-Installation',
+  '安装内容': 'Installation Scope',
+  '收尾': 'Final Completion',
+  '开荒保洁': 'Post-Construction Cleaning',
+  '安装': 'Installation',
+  '美缝（甲供）': 'Decorative Grouting with Client-Supplied Materials',
+  '全屋定制木作': 'Whole-Home Bespoke Millwork',
+  '空调出风口、新风出风口、浴霸、凉霸': 'AC / Fresh Air Outlets, Bathroom Heaters & Cooling Fans',
+  '厨卫五金、卫浴': 'Kitchen / Bathroom Hardware & Sanitaryware',
+  '厨房电器': 'Kitchen Appliances',
+  '灯具、开关': 'Light Fixtures & Switches',
+  '窗帘': 'Curtains',
+  '木地板、踢脚线': 'Wood Flooring & Skirting',
+  '分支主题（待确认 · 原图保留）': 'Branch Topic: To Be Confirmed · Retained from Source',
+  '收尾调试': 'Final Checks & Commissioning',
+  '有问题返回对应安装项目整改，再复核。': 'Rectify the Relevant Installation, Then Recheck.',
+  '安装完成、系统调试与问题闭环': 'Completed Installation, Commissioning & Defect Resolution',
+  '软装摆场 · 并列内容': 'Furnishing & Styling · Parallel Scope',
+  '软装摆场': 'Furnishing & Styling',
+  '家具类': 'Furniture',
+  '布艺织物': 'Fabrics & Textiles',
+  '装饰画与墙面装饰': 'Artwork & Wall Decor',
+  '花艺绿植': 'Floral Arrangements & Plants',
+  '摆件饰品': 'Decorative Objects',
+  '厨卫小件': 'Kitchen & Bathroom Accessories',
+  '可移动家电数码': 'Portable Appliances & Electronics',
+  '完成软装摆场与空间呈现': 'Completed Furnishing, Styling & Final Presentation',
+  '交付与维护': 'Handover & Maintenance',
+  '费用管理': 'Cost Management',
+  '最终保洁': 'Final Cleaning',
+  '验收': 'Acceptance Inspection',
+  '售后与维护': 'Aftercare & Maintenance',
+  '决算': 'Final Account',
+  '最终验收与售后维护安排': 'Final Acceptance & Aftercare Arrangements',
+  '需求与设计标书': 'Requirements & Design Brief',
+  '施工图客户确认': 'Client Approval of Construction Drawings',
+  '深化图纸联合确认': 'Joint Approval of Detail Drawings',
+  '工种阶段联合验收': 'Joint Inspection at Trade Milestones',
+  '最终验收': 'Final Acceptance',
+  '沟通设计需求，参与设计师选择。': 'Discuss the Brief and Take Part in Designer Selection.',
+  '核对功能需求与平面布局；不符时调整。': 'Check Requirements Against the Floor Plan; Revise as Needed.',
+  '核对风格需求与效果呈现；不符时调整。': 'Check Style Preferences Against Renderings; Revise as Needed.',
+  '绘制施工图后，由客户确认。': 'Obtain Client Approval Once Construction Drawings Are Ready.',
+  '完成招标与报价，确定施工方。': 'Complete Tendering and Pricing, Then Appoint the Contractor.',
+  '核对报价、辅材单与基础施工方案。': 'Review Pricing, Ancillary Materials and the Base-Build Plan.',
+  '各专业会签，业主确认后现场交底。': 'Coordinate Trade Sign-Off and Client Approval Before Site Briefing.',
+  '水电、木工、瓦工、油工分别验收，问题整改闭环。': 'Inspect Services, Carpentry, Tiling and Painting; Verify Defect Resolution.',
+  '最终保洁后验收，再进入售后与维护。': 'Inspect After Final Cleaning, Then Begin Aftercare and Maintenance.',
+  '由业主需求出发，完成设计师选择、布局与效果确认，形成可供后续深化的施工图。': 'Develop the Client Brief, Select the Designer and Approve Plans and Visuals for Further Detailing.',
+  '土建施工方与基础装修方分别确认，在施工前协调方案、完成面和现场尺寸。': 'Appoint Civil and Fit-Out Contractors Separately; Coordinate Plans, Finished Surfaces and Site Dimensions.',
+  '采购主材与跨专业深化同步协调，将各类接口汇入图纸会签，经业主确认后进行现场交底。': 'Coordinate Procurement and Trade Details; Integrate Interfaces, Obtain Sign-Off and Brief the Site Team.',
+  '基础装修各工种按现场条件组织实施，分别验收、问题整改，再进入后续工序。': 'Sequence Fit-Out Trades to Suit Site Conditions; Inspect and Rectify Before Subsequent Work.',
+  '开荒保洁后安排安装，协调各专业的进场和交接，通过收尾调试完成问题闭环。': 'Coordinate Installation After Construction Cleaning; Manage Trade Handovers and Close Issues through Commissioning.',
+  '以软装摆场统筹家具、织物、陈设与日常物件，协调空间关系和最终呈现。': 'Coordinate Furniture, Textiles, Decor and Everyday Objects for a Cohesive Final Presentation.',
+  '完成最终保洁与业主验收，进入售后与维护；决算作为独立的费用管理事项。': 'Complete Final Cleaning and Client Acceptance, Then Begin Aftercare; Manage the Final Account Separately.'
+});
+
+function enFor(text) {
+  const key = String(text == null ? '' : text).trim();
+  return Object.prototype.hasOwnProperty.call(TRANSLATIONS, key) ? TRANSLATIONS[key] : '';
+}
+</script><script>/* Bilingual SVG shared by the interactive map and its high-resolution export. */
+function buildAllBubbleGraph(p,logo,activeStage=-1){
+  const W=6660,M=95,LW=875,GAP=57,HEADER=440;
+  const ns=[],es=[],notes=[],regions=[];let maxBottom=0,counter=0;
+  const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const palette=p,measure=document.createElement('canvas').getContext('2d');
+  const wrapCN=(s,n)=>{const a=[];let t='';for(const c of s){if(t.length>=n){a.push(t);t=''}t+=c;}if(t)a.push(t);return a};
+  function wrapEN(s,width,size=20){measure.font=`${size}px Arial`;const out=[];let line='';for(const word of s.split(/\s+/)){if(!word)continue;const next=line?line+' '+word:word;if(measure.measureText(next).width>width&&line){out.push(line);line=word}else line=next}if(line)out.push(line);return out}
+  function txt(x,y,s,size=26,color=palette.ink,extra=''){return `<text x="${x}" y="${y}" fill="${color}" font-size="${size}" ${extra}>${escape(s)}</text>`}
+  function textPair(x,y,zh,en,width,cnSize=21,enSize=17){let out='',cy=y;for(const line of wrapCN(zh,Math.floor(width/cnSize))){out+=txt(x,cy,line,cnSize,palette.muted);cy+=cnSize+8}for(const line of wrapEN(en,width,enSize)){out+=txt(x,cy,line,enSize,palette.subtle,'font-family="Arial,sans-serif"');cy+=enSize+7}return {markup:out,height:cy-y}}
+  function edge(d,stage,type='branch'){es.push({id:'all-edge-'+counter++,d,stage,type})}
+  function labelSpec(label,kind,w){const cs=kind==='group'?26:kind==='result'?27:28,es=kind==='group'?19:20,cn=wrapCN(label,Math.floor((w-34)/cs)),en=wrapEN(enFor(label),w-38,es),h=Math.max(96,28+cn.length*(cs+6)+9+en.length*(es+5));return {cn,en,h,cs,es}}
+  function node(id,stage,x,y,w,h,label,kind='item',opts={}){const spec=labelSpec(label,kind,w),n={id,stage,x,y,w,h,label,kind,opts,spec};ns.push(n);return n}
+  const badgeFor=(s,g,i)=>({'0-0-0':1,'0-1-2':2,'0-2-2':3,'0-3-1':4,'1-0-2':5,'1-2-2':6,'2-5-1':7,'6-0-1':9}[`${s}-${g}-${i}`]);
+  FLOW.forEach((f,si)=>{
+    const x=M+si*(LW+GAP),cx=x+LW/2,trunk=x+23;
+    node('all-stage-'+si,si,x+107,HEADER,660,170,f.full||f.name,'stage',{number:si+1,budget:f.budget});
+    let y=HEADER+242;
+    f.groups.forEach((g,gi)=>{
+      const short=g.name.replace(' · 独立流程','').replace(' · 并列内容',''),gs=labelSpec(short,'group',226),leaves=g.items.map((item,ii)=>({label:item,ii,spec:labelSpec(item,'item',500)}));
+      const leafH=leaves.reduce((sum,l)=>sum+l.spec.h,0)+(leaves.length-1)*26,blockH=Math.max(leafH,gs.h),top=y,gy=top+(blockH-gs.h)/2,mid=gy+gs.h/2;
+      node(`all-group-${si}-${gi}`,si,x+62,gy,226,gs.h,short,'group',{group:gi,badge:si===3&&[0,2,3,4].includes(gi)?8:null});
+      edge(`M${trunk} ${HEADER+205} V${mid-22} Q${trunk} ${mid} ${trunk+22} ${mid} H${x+62}`,si);
+      let ly=top+(blockH-leafH)/2;
+      leaves.forEach((l,ii)=>{l.x=x+335;l.y=ly;l.w=500;l.h=l.spec.h;node(`all-item-${si}-${gi}-${ii}`,si,l.x,l.y,l.w,l.h,l.label,'item',{badge:badgeFor(si,gi,ii),group:gi,item:ii});ly+=l.h+26;
+        if(g.kind==='parallel'||ii===0)edge(`M${x+288} ${mid} C${x+315} ${mid} ${x+308} ${l.y+l.h/2} ${l.x} ${l.y+l.h/2}`,si,g.kind==='sequence'?'sequence':'branch');
+        else{const prev=leaves[ii-1];edge(`M${l.x+250} ${prev.y+prev.h} V${l.y}`,si,'sequence')}
+      });
+      y=top+blockH+34;
+      notes.push(txt(x+66,y,g.kind==='sequence'?'顺序推进 ↓':'并列统筹',18,palette.subtle),txt(x+66,y+25,g.kind==='sequence'?'SEQUENCE':'PARALLEL',14,palette.subtle,'font-family="Arial,sans-serif" letter-spacing="1"'));
+      if(g.loop){const a=leaves[0],z=leaves[leaves.length-1],rx=x+LW-8;
+        edge(`M${z.x+z.w} ${z.y+z.h/2} H${rx-10} Q${rx} ${z.y+z.h/2} ${rx} ${z.y+z.h/2-10} V${a.y+a.h/2+10} Q${rx} ${a.y+a.h/2} ${rx-10} ${a.y+a.h/2} H${a.x+a.w}`,si,'loop');
+        const pair=textPair(x+335,y,'↶ '+g.loop,enFor(g.loop),505,20,17);notes.push(pair.markup);y+=Math.max(32,pair.height);
+      }else y+=32;
+      y+=55;
+    });
+    edge(`M${cx} ${HEADER+170} V${HEADER+182} Q${cx} ${HEADER+205} ${cx-23} ${HEADER+205} H${trunk}`,si);
+    if(f.note){const pair=textPair(x+64,y+10,f.note,enFor(f.note),745,21,17);notes.push(pair.markup);y+=pair.height+35}
+    maxBottom=Math.max(maxBottom,y);regions.push({stage:si,x:x-10,y:HEADER-25,w:LW+20,h:y-HEADER+80,cx});
+  });
+  const outputY=maxBottom+40,outputH=176,H=outputY+630;
+  FLOW.forEach((f,i)=>{const x=M+i*(LW+GAP),cx=x+LW/2;
+    node('all-result-'+i,i,x+60,outputY,754,outputH,f.result,'result');
+    edge(`M${x+23} ${HEADER+205} V${outputY+outputH/2-24} Q${x+23} ${outputY+outputH/2} ${x+47} ${outputY+outputH/2} H${x+60}`,i,'summary');
+    if(i<6)edge(`M${x+767} ${HEADER+75} H${M+(i+1)*(LW+GAP)+107}`,i,'journey');
+    edge(`M3330 260 C3330 352 ${cx} 322 ${cx} ${HEADER}`,i,'management');
+  });
+  node('all-core',-1,3000,90,660,170,'HIBORN','core');
+  const defs=`<defs><linearGradient id="bubbleBg" x2=".85" y2="1"><stop stop-color="${palette.bg2}"/><stop offset="1" stop-color="${palette.bg}"/></linearGradient><linearGradient id="bubbleMetal" x2=".8" y2="1"><stop stop-color="${palette.node1}"/><stop offset=".48" stop-color="${palette.node3}"/><stop offset="1" stop-color="${palette.node2}"/></linearGradient><marker id="bubbleArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="${palette.lineStrong}" stroke-width="1.4"/></marker><marker id="loopArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="${palette.loop}" stroke-width="1.4"/></marker><filter id="bubbleGlow" x="-250%" y="-250%" width="600%" height="600%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>`;
+  let svg=defs+`<rect width="${W}" height="${H}" fill="url(#bubbleBg)"/><g font-family="Microsoft YaHei,PingFang SC,Arial,sans-serif">`;
+  svg+=txt(108,120,'全过程管理架构',48,palette.ink)+txt(110,164,'END-TO-END RENOVATION MANAGEMENT',21,palette.subtle,'font-family="Arial,sans-serif" letter-spacing="3"');
+  svg+=txt(W-110,117,'07 阶段 · 24 工作分类 · 94 明细气泡',27,palette.muted,'text-anchor="end"')+txt(W-110,162,'7 STAGES / 24 WORKSTREAMS / 94 TASKS',21,palette.subtle,'text-anchor="end" font-family="Arial,sans-serif" letter-spacing="2"');
+  regions.forEach((r,i)=>{if(i>0)svg+=`<path d="M${r.x-27} ${HEADER-20}V${outputY+outputH+30}" stroke="${palette.line}" stroke-opacity=".15" stroke-dasharray="4 14"/>`});
+  svg+='<g class="all-edges">'+es.map(e=>{const loop=e.type==='loop',seq=e.type==='journey'||e.type==='sequence',soft=e.type==='management'||e.type==='summary';return `<path id="${e.id}" data-all-edge="${e.stage}" data-edge-type="${e.type}" d="${e.d}" fill="none" stroke="${loop?palette.loop:soft?palette.line:palette.lineStrong}" stroke-width="${e.type==='journey'?2.8:1.9}" stroke-opacity="${soft?.5:.76}" ${loop?'stroke-dasharray="7 7" marker-end="url(#loopArrow)"':seq?'marker-end="url(#bubbleArrow)"':''}/>`}).join('')+'</g>';
+  ns.forEach(n=>{const chosen=n.stage===activeStage,fill=n.kind==='stage'||n.kind==='core'?'url(#bubbleMetal)':palette.node2;
+    svg+=`<g id="${n.id}" class="bubble-node ${n.kind}" data-bubble-stage="${n.stage}" ${n.opts.group!==undefined?'data-bubble-group="'+n.opts.group+'"':''} data-node-label="${escape(n.label)}" data-node-kind="${n.kind}" role="button" tabindex="0" aria-label="${escape(n.label)}${n.kind==='core'?'':' / '+escape(enFor(n.label))}"><rect x="${n.x}" y="${n.y}" width="${n.w}" height="${n.h}" rx="${n.kind==='core'?32:26}" fill="${fill}" stroke="${chosen?palette.lineStrong:palette.line+'aa'}" stroke-width="${chosen?2:1.4}"/><circle cx="${n.x}" cy="${n.y+n.h/2}" r="3" fill="${palette.accent}"/><circle cx="${n.x+n.w}" cy="${n.y+n.h/2}" r="3" fill="${palette.accent}"/>`;
+    if(n.kind==='core'){
+      svg+=txt(n.x+n.w/2,n.y+78,'HIBORN',62,palette.ink,'class="wordmark" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="1"');
+      svg+=txt(n.x+n.w/2,n.y+126,'高标装修全过程管理',28,palette.muted,'text-anchor="middle" letter-spacing="1"');
+    }else if(n.kind==='stage'){
+      svg+=txt(n.x+27,n.y+48,`0${n.opts.number}  ${n.label}`,34,palette.ink);
+      wrapEN(enFor(n.label),602,23).forEach((l,j)=>svg+=txt(n.x+30,n.y+82+j*25,l,23,palette.muted,'data-en="true" font-family="Arial,sans-serif"'));
+      svg+=txt(n.x+30,n.y+124,n.opts.budget,22,palette.subtle)+txt(n.x+30,n.y+151,enFor(n.opts.budget),18,palette.subtle,'data-en="true" font-family="Arial,sans-serif"');
+    }else{
+      const s=n.spec,block=s.cn.length*(s.cs+6)+9+s.en.length*(s.es+5),start=n.y+(n.h-block)/2+s.cs;
+      s.cn.forEach((l,j)=>svg+=txt(n.x+n.w/2,start+j*(s.cs+6),l,s.cs,palette.ink,'text-anchor="middle"'));
+      s.en.forEach((l,j)=>svg+=txt(n.x+n.w/2,start+s.cn.length*(s.cs+6)+7+j*(s.es+5),l,s.es,palette.muted,'data-en="true" text-anchor="middle" font-family="Arial,sans-serif"'));
+    }
+    if(n.opts.badge){const bx=n.x+n.w-9,by=n.y-7;svg+=`<circle cx="${bx}" cy="${by}" r="19" fill="${palette.accent}" stroke="${palette.bg}" stroke-width="3"/>`+txt(bx,by+7,String(n.opts.badge),20,palette.bg,'data-badge="true" text-anchor="middle" font-weight="600"')}
+    svg+='</g>';
+  });
+  svg+=notes.join('');const fy=outputY+outputH+90;
+  svg+=`<path d="M108 ${fy}H${W-110}" stroke="${palette.line}" stroke-opacity=".4"/>`+txt(110,fy+54,'业主参与节点',27,palette.ink)+txt(110,fy+87,'OWNER MILESTONES',19,palette.subtle,'font-family="Arial,sans-serif"');
+  MILESTONES.forEach((m,i)=>{const x=640+i*660;svg+=`<circle cx="${x}" cy="${fy+43}" r="19" fill="${palette.node3}" stroke="${palette.lineStrong}"/>`+txt(x,fy+50,String(m.id),20,palette.ink,'text-anchor="middle"');svg+=textPair(x+36,fy+52,m.title,enFor(m.title),570,25,19).markup});
+  svg+=txt(110,H-126,'→ 顺序推进     分叉线：工作分类     ⇢ 虚线：返回调整     ● 编号：业主参与',23,palette.subtle)+txt(110,H-93,'Sequence / Workstream branches / Revision loops / Owner milestones',19,palette.subtle,'font-family="Arial,sans-serif"');
+  svg+=txt(110,H-51,'分支表示工作构成；实际工序按现场条件组织。',22,palette.subtle)+txt(W-110,H-51,'Workstreams are grouped by scope. Site conditions determine the execution sequence.',19,palette.subtle,'text-anchor="end" font-family="Arial,sans-serif"');
+  svg+='</g>';
+  return {width:W,height:H,markup:svg,edges:es,nodes:ns,regions,counts:{stages:FLOW.length,groups:FLOW.reduce((n,f)=>n+f.groups.length,0),items:FLOW.reduce((n,f)=>n+f.groups.reduce((a,g)=>a+g.items.length,0),0)}};
+}
+</script><script>/* Full architecture canvas: all items stay rendered while navigating. */
+let fullGraph=null,mapZoom=0,mapFit=false,mapLayout='width',dragging=null,suppressBubbleClick=false;
+function currentPalette(){return Object.assign(HBTheme.palette(),{light:HBTheme.get()==='light'})}
+function renderAllGraph(){
+  const svg=$('#diagram'),wrap=$('#canvasWrap');
+  const left=wrap.scrollLeft,top=wrap.scrollTop;
+  fullGraph=buildAllBubbleGraph(currentPalette(),LOGO,selected);
+  const g=fullGraph;
+  svg.setAttribute('viewBox',`0 0 ${g.width} ${g.height}`);
+  svg.setAttribute('aria-label','七阶段、24 个工作分类、94 个明细气泡的完整流程图。使用缩放与拖动查看全部内容。');
+  svg.innerHTML=g.markup;
+  // Dots travel along a small, distributed selection of routes, never imply live progress.
+  const animated=g.edges.filter((e,i)=>e.type==='management'||e.type==='journey'||(e.stage===selected&&e.type!=='summary')||(i%9===0&&e.type==='branch')).slice(0,70);
+  const pg=document.createElementNS('http://www.w3.org/2000/svg','g');pg.id='particles';
+  animated.forEach((e,i)=>{const dot=document.createElementNS('http://www.w3.org/2000/svg','circle');dot.setAttribute('r',e.type==='management'?4:3.5);dot.setAttribute('fill',HBTheme.palette().dot);dot.setAttribute('filter','url(#bubbleGlow)');dot.setAttribute('pointer-events','none');dot.dataset.path=e.id;pg.appendChild(dot)});
+  svg.appendChild(pg);
+  paths=[...pg.children].map((dot,i)=>{const p=document.getElementById(dot.dataset.path);return {dot,p,len:p.getTotalLength(),offset:(i*.213)%1,govern:animated[i].type==='management'}});
+  svg.querySelectorAll('[data-bubble-stage]').forEach(n=>{
+    const act=()=>{if(suppressBubbleClick)return;const si=+n.dataset.bubbleStage;if(si<0){fitFullMap();return}selectStage(si);const gi=n.dataset.bubbleGroup;if(gi!==undefined){const c=$('#group-'+gi);if(c)c.classList.add('selected')}toast(n.dataset.nodeLabel+' · 对应明细已在下方展开')};
+    n.onclick=act;n.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}};
+  });
+  $('#mapCount').textContent=`${g.counts.stages} 阶段 · ${g.counts.groups} 工作分类 · ${g.counts.items} 明细气泡`;
+  $('#viewHint').textContent=innerWidth<700?'单指拖动 · 双指捏合缩放 · 双击放大/复位':'全部气泡已展开 · 拖动画布 / 放大阅读 · 点击气泡查看下方明细';
+  if(mapLayout==='width')fillMapWidth();else if(mapFit||!mapZoom)fitFullMap();else{applyMapSize();wrap.scrollLeft=left;wrap.scrollTop=top}
+  window.HBResources?.decorateGraph();
+  drawParticles();
+}
+function mapViewport(){const w=$('#canvasWrap');return {w:w.clientWidth,h:w.clientHeight}}
+function applyMapSize(){if(!fullGraph)return;const svg=$('#diagram'),wrap=$('#canvasWrap');wrap.classList.toggle('map-fitted',mapFit);wrap.classList.toggle('map-width',mapLayout==='width');wrap.style.height=mapLayout==='width'?fullGraph.height*mapZoom+'px':'';svg.style.width=fullGraph.width*mapZoom+'px';svg.style.height=fullGraph.height*mapZoom+'px';$('#zoomValue').textContent=Math.round(mapZoom*100)+'%';$('#fitMap').setAttribute('aria-pressed',String(mapFit));$('#widthMap').setAttribute('aria-pressed',String(mapLayout==='width'));}
+function fillMapWidth(){if(mode!=='all'||!fullGraph)return;mapLayout='width';mapFit=false;mapZoom=$('#canvasWrap').clientWidth/fullGraph.width;applyMapSize();$('#canvasWrap').scrollLeft=0;$('#canvasWrap').scrollTop=0;}
+function fitFullMap(){if(mode!=='all'||!fullGraph)return;mapLayout='fit';mapFit=true;const w=$('#canvasWrap');w.style.height='';w.classList.remove('map-width');w.classList.add('map-fitted');const v=mapViewport();mapZoom=Math.min(v.w/fullGraph.width,v.h/fullGraph.height);applyMapSize();w.scrollLeft=0;w.scrollTop=0;}
+function zoomMap(value,anchor){if(mode!=='all')return;const w=$('#canvasWrap'),v=mapViewport(),a=anchor||{x:v.w/2,y:Math.min(v.h,innerHeight*.65)/2};const x=(w.scrollLeft+a.x)/mapZoom,y=(w.scrollTop+a.y)/mapZoom;mapZoom=Math.max(.035,Math.min(1.8,value));mapFit=false;mapLayout='free';applyMapSize();w.scrollLeft=x*mapZoom-a.x;w.scrollTop=y*mapZoom-a.y;}
+function locateStage(){if(mode!=='all')setMode('all');const r=fullGraph.regions[selected],w=$('#canvasWrap');mapFit=false;mapLayout='free';mapZoom=Math.max(.34,Math.min(.8,w.clientWidth/(r.w+40)));applyMapSize();w.scrollLeft=(r.cx*mapZoom-w.clientWidth/2);w.scrollTop=(r.y-25)*mapZoom;}
+function wireMapControls(){
+  $('#zoomIn').onclick=()=>zoomMap(mapZoom*1.35);$('#zoomOut').onclick=()=>zoomMap(mapZoom/1.35);$('#fitMap').onclick=fitFullMap;$('#widthMap').onclick=fillMapWidth;
+  $('#readMap').onclick=()=>{mapZoom=.72;mapFit=false;mapLayout='free';applyMapSize();const r=fullGraph.regions[selected];$('#canvasWrap').scrollLeft=Math.max(0,(r.x-15)*mapZoom);$('#canvasWrap').scrollTop=(r.y-15)*mapZoom;};
+  $('#focusMap').onclick=locateStage;
+  $('#fullscreenBtn').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await $('.instrument').requestFullscreen()}catch(_){toast('当前浏览器不支持全屏，可使用放大与清晰阅读。')}};
+  document.addEventListener('fullscreenchange',()=>{$('#fullscreenBtn').textContent=document.fullscreenElement?'退出全屏 ↙':'全屏 ↗';requestAnimationFrame(()=>{if(mapLayout==='width')fillMapWidth();else if(mapFit)fitFullMap()})});
+  const w=$('#canvasWrap');
+  w.addEventListener('wheel',e=>{if(mode==='all'&&(e.ctrlKey||e.metaKey)){e.preventDefault();const b=w.getBoundingClientRect();zoomMap(mapZoom*Math.exp(-e.deltaY*.004),{x:e.clientX-b.left,y:e.clientY-b.top})}},{passive:false});
+  w.addEventListener('pointerdown',e=>{if(mode!=='all'||e.pointerType!=='mouse'||e.button!==0)return;dragging={x:e.clientX,y:e.clientY,left:w.scrollLeft,top:w.scrollTop,id:e.pointerId};suppressBubbleClick=false;});
+  w.addEventListener('pointermove',e=>{if(!dragging)return;const dx=e.clientX-dragging.x,dy=e.clientY-dragging.y;if(Math.hypot(dx,dy)>4){suppressBubbleClick=true;w.classList.add('dragging');w.setPointerCapture(e.pointerId);w.scrollLeft=dragging.left-dx;w.scrollTop=dragging.top-dy;}});
+  const end=()=>{dragging=null;w.classList.remove('dragging');setTimeout(()=>{suppressBubbleClick=false},40)};w.addEventListener('pointerup',end);w.addEventListener('pointercancel',end);
+  // —— 手机触屏手势：单指拖动(带惯性) / 双指捏合缩放 / 双击放大复位 ——
+  const svgT=$('#diagram');
+  let gesture=null,inertia=null,lastTap={t:0,x:0,y:0};
+  const stopInertia=()=>{if(inertia){cancelAnimationFrame(inertia);inertia=null}};
+  const beginTouch=ts=>{
+    stopInertia();
+    const b=w.getBoundingClientRect();
+    gesture={L:w.scrollLeft,T:w.scrollTop,Z:mapZoom,moved:false};
+    if(ts.length===1){gesture.type='pan';gesture.px=ts[0].clientX;gesture.py=ts[0].clientY;gesture.vx=0;gesture.vy=0;gesture.t=performance.now();}
+    else{gesture.type='pinch';const mx=(ts[0].clientX+ts[1].clientX)/2-b.left,my=(ts[0].clientY+ts[1].clientY)/2-b.top;gesture.d0=Math.hypot(ts[0].clientX-ts[1].clientX,ts[0].clientY-ts[1].clientY)||1;gesture.pc={x:w.scrollLeft+mx,y:w.scrollTop+my};svgT.style.willChange='transform';}
+  };
+  w.addEventListener('touchstart',e=>{if(mode!=='all'||!fullGraph)return;beginTouch(e.touches);},{passive:true});
+  w.addEventListener('touchmove',e=>{
+    if(mode!=='all'||!gesture)return;
+    e.preventDefault();
+    const ts=e.touches;
+    if(gesture.type==='pan'&&ts.length===1){
+      const dx=ts[0].clientX-gesture.px,dy=ts[0].clientY-gesture.py;
+      if(!gesture.moved&&Math.hypot(dx,dy)>4){gesture.moved=true;suppressBubbleClick=true;w.classList.add('dragging');}
+      if(gesture.moved){
+        const now=performance.now(),dt=Math.max(1,now-gesture.t);
+        gesture.vx=dx/dt*16.7;gesture.vy=dy/dt*16.7;
+        w.scrollLeft-=dx;w.scrollTop-=dy;
+      }
+      gesture.px=ts[0].clientX;gesture.py=ts[0].clientY;gesture.t=performance.now();
+    }else if(ts.length>=2){
+      if(gesture.type!=='pinch'){beginTouch(ts);return;}
+      const b=w.getBoundingClientRect();
+      const d=Math.hypot(ts[0].clientX-ts[1].clientX,ts[0].clientY-ts[1].clientY);
+      const mx=(ts[0].clientX+ts[1].clientX)/2-b.left,my=(ts[0].clientY+ts[1].clientY)/2-b.top;
+      const s=Math.max(.035/gesture.Z,Math.min(1.8/gesture.Z,d/gesture.d0));
+      const tx=mx-gesture.pc.x*s+gesture.L,ty=my-gesture.pc.y*s+gesture.T;
+      svgT.style.transform=`translate(${tx}px,${ty}px) scale(${s})`;
+      gesture.s=s;gesture.tx=tx;gesture.ty=ty;gesture.moved=true;suppressBubbleClick=true;
+    }
+  },{passive:false});
+  const commitPinch=g=>{
+    svgT.style.transform='';svgT.style.willChange='';
+    mapFit=false;mapLayout='free';
+    mapZoom=Math.max(.035,Math.min(1.8,g.Z*g.s));
+    applyMapSize();
+    w.scrollLeft=g.L-g.tx;w.scrollTop=g.T-g.ty;
+  };
+  const endTouch=e=>{
+    if(mode!=='all'||!gesture)return;
+    // 关键：先提交捏合缩放（含"先后松开两根手指"的情况），否则视觉放大了但实际尺寸没变
+    if(gesture.type==='pinch'&&gesture.s!==undefined)commitPinch(gesture);
+    if(e.touches.length>0){beginTouch(e.touches);return;}
+    const g=gesture;gesture=null;w.classList.remove('dragging');
+    setTimeout(()=>{suppressBubbleClick=false},40);
+    if(g.type==='pinch')return;
+    if(g.type!=='pan')return;
+    if(g.moved){
+      let vx=g.vx,vy=g.vy;
+      if(Math.hypot(vx,vy)>1){
+        const step=()=>{w.scrollLeft-=vx;w.scrollTop-=vy;vx*=.94;vy*=.94;if(Math.hypot(vx,vy)>.35)inertia=requestAnimationFrame(step);else inertia=null;};
+        inertia=requestAnimationFrame(step);
+      }
+      return;
+    }
+    // 轻点 → 双击检测：放大到当前点 / 复位全图
+    const now=performance.now();
+    if(now-lastTap.t<320&&Math.hypot(g.px-lastTap.x,g.py-lastTap.y)<30){
+      const b=w.getBoundingClientRect(),v=mapViewport(),fitZ=Math.min(v.w/fullGraph.width,v.h/fullGraph.height);
+      if(mapZoom<=fitZ*1.15)zoomMap(Math.min(1.4,Math.max(.7,fitZ*3)),{x:g.px-b.left,y:g.py-b.top});else fitFullMap();
+      lastTap={t:0,x:0,y:0};
+    }else lastTap={t:now,x:g.px,y:g.py};
+  };
+  w.addEventListener('touchend',endTouch);
+  w.addEventListener('touchcancel',endTouch);
+  window.addEventListener('resize',()=>{if(mode==='all'){if(mapLayout==='width')fillMapWidth();else if(mapFit)fitFullMap()}});
+  window.addEventListener('hbthemechange',()=>renderGraph());
+}
+function posterSvg(requestedTheme){const palette=Object.assign(HBTheme.palette(requestedTheme),{light:(requestedTheme||HBTheme.get())==='light'}),g=buildAllBubbleGraph(palette,LOGO,-1),w=8000,h=Math.round(g.height/g.width*w);return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${g.width} ${g.height}" font-family="Microsoft YaHei,PingFang SC,Arial,sans-serif">${g.markup}</svg>`}
+async function exportPoster(){const btn=$('#exportBtn');btn.disabled=true;btn.textContent='正在生成高清气泡图…';try{await document.fonts.ready;const source=posterSvg(),xml=new DOMParser().parseFromString(source,'image/svg+xml').documentElement,url=URL.createObjectURL(new Blob([source],{type:'image/svg+xml;charset=utf-8'})),img=new Image();try{await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=reject;img.src=url});const canvas=document.createElement('canvas');canvas.width=Number(xml.getAttribute('width'));canvas.height=Number(xml.getAttribute('height'));canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);const blob=await new Promise(r=>canvas.toBlob(r,'image/png'));if(!blob)throw Error('export');const a=document.createElement('a'),p=URL.createObjectURL(blob);a.href=p;a.download='海本精管_全量气泡图_'+(HBTheme.get()==='light'?'浅色':'深色')+'_8000px.png';a.click();setTimeout(()=>URL.revokeObjectURL(p),3000);toast(canvas.width+' × '+canvas.height+' 高清气泡总图已生成');canvas.width=1;canvas.height=1;}finally{URL.revokeObjectURL(url)}}catch(e){toast('当前浏览器未能导出，请使用完整包中的高清 PNG。')}finally{btn.disabled=false;btn.innerHTML='导出气泡总图 <span>↗</span>';}}
+</script><script>window.HB_RESOURCE_DATA = {
+  resources: [
+    {
+      id: 'woodwork-joints',
+      title: '木作高级不高级，就看这几条“缝”',
+      category: '木作',
+      source: '小红书',
+      url: 'https://www.xiaohongshu.com/explore/6a7dd35a00000000260368c8?xsec_token=ABybxU8e0HTUoKHxw1TVf26iD5Bkj3tF73VS4C-0pMH5o=&xsec_source=pc_user',
+      description: '门、墙、柜与石材交界处的木作关系参考。'
+    },
+    {
+      id: 'tile-relationships',
+      title: '瓷砖贴得平只是基础，真正难的是这些关系',
+      category: '瓦工与瓷砖',
+      source: '小红书',
+      url: 'https://www.xiaohongshu.com/explore/6a9ec9fc0000000028037289?xsec_token=ABBFREuUz1zHfVdnpWjskSgmASQj0jhKfYsLQYIsauLAc=&xsec_source=pc_user',
+      description: '排版、对缝、标高、找坡，以及门口、地漏和不同材料的交接。'
+    },
+    {
+      id: 'paint-preparation',
+      title: '墙面好不好看，最大的变量其实在刷漆之前',
+      category: '油工与涂料',
+      source: '小红书',
+      url: 'https://www.xiaohongshu.com/explore/6aa5395000000000120024bb?xsec_token=ABPmAC0IbSBqYzO7dUZ-4g-iEwnXzA3VsN2mJdQu8fILU=&xsec_source=pc_user',
+      description: '找方找平、阴阳角与收口，从基层、腻子到涂料和灯光复检。'
+    },
+    {
+      id: 'lighting-coordination',
+      title: '灯很多，空间却不好看？问题可能根本不在灯。',
+      category: '灯光',
+      source: '小红书',
+      url: 'https://www.xiaohongshu.com/explore/6a882278000000002802e164?xsec_token=ABjm6Na3U6Od-LmYcqK2ot_UD4mDEDdL5Tllh8Bpk6Kv8=&xsec_source=pc_user',
+      description: '涉及眩光、灯位，以及木作中的供电与检修。'
+    },
+    {
+      id: 'water-planning',
+      title: '给排水，不只是埋几根管。',
+      category: '给排水',
+      source: '小红书',
+      url: 'https://www.xiaohongshu.com/explore/6a91b0c0000000000a009a6e?xsec_token=ABnMYAo1Ihyhz5Q1G9cBwO8D5JMOgbLNPEE8702poMPNE=&xsec_source=pc_user',
+      description: '涉及用水画像、水压、热水、分质供水与排水。'
+    },
+    {
+      id: 'waterproofing-interfaces',
+      title: '防水最容易翻车的，往往不是防水层',
+      category: '防水',
+      source: '小红书',
+      url: 'https://www.xiaohongshu.com/explore/6a982b2d000000001203cbf3?xsec_token=AB3qmg4SE0Xctj7-Eou_3Lb3BUJTdhpbJ3gJQMYrAzrPc=&xsec_source=pc_user',
+      description: '围绕防水层之外相关问题的专业文章。'
+    },
+    {
+      id: 'bim-pipeline',
+      title: '曲江和园别墅管线BIM、水电进场',
+      category: 'BIM与深化',
+      source: '小红书',
+      url: 'https://www.xiaohongshu.com/explore/6a34e010000000000f006f8e?xsec_token=AB9XqKKMc7TTWAtNW__fFKTMXrdTQj6ZcWru83JHrLQUg=&xsec_source=pc_user',
+      description: '曲江和园别墅项目的管线 BIM 与水电进场记录。'
+    },
+    {
+      id: 'mep-layout',
+      title: '精工展厅大机电布局',
+      category: '机电深化',
+      source: '小红书',
+      url: 'https://www.xiaohongshu.com/explore/6a12460f00000000350398f0?xsec_token=ABOahqC9wScKdwtOZkEWYzj95hSh1wLMERQq48r7LYXgs=&xsec_source=pc_user',
+      description: '精工展厅项目的大机电布局参考。'
+    },
+    {
+      id: 'tender-progress',
+      title: '一些落地作品、投标及进度控制。。。',
+      category: '招标与进度',
+      source: '小红书',
+      url: 'https://www.xiaohongshu.com/explore/69bd60dd000000001b001cde?xsec_token=AB1-_Lw8rrBswgBhpUVsUEYfKBKQzgc_Z-m4nBEaHj6M0=&xsec_source=pc_user',
+      description: '落地作品、投标及进度控制相关记录。'
+    },
+    {
+      id: 'water-diagnostic-tool',
+      title: '高端私宅给排水前端诊断',
+      category: '给排水',
+      source: '海本专业工具',
+      url: 'https://yw3762737-dotcom.github.io/water/',
+      description: '海本给排水前端诊断工具，含 120 项问题库。'
+    },
+    {
+      id: 'preconstruction-checklist',
+      title: '施工前联合确认',
+      category: '联合确认',
+      source: '海本专业工具',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-checklist/?v=6',
+      description: '海本精造施工前联合确认工具。'
+    },
+    {
+      id: 'dwg-wall-setting',
+      title: '墙面完成面放线平面图 1F~3F',
+      category: '施工图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/01.01_%E5%B7%A8%E9%B9%BF%E8%B7%AF_%E5%A2%99%E9%9D%A2%E5%AE%8C%E6%88%90%E9%9D%A2%E6%94%BE%E7%BA%BF%E5%B9%B3%E9%9D%A2%E5%9B%BE_1F~3F_%E6%AD%A3%E5%BC%8F%E6%96%BD%E5%B7%A5%E5%9B%BE_2026.07.29.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-wall-finish',
+      title: '墙面完成面分析',
+      category: '分析图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/01_%E5%A2%99%E9%9D%A2%E5%AE%8C%E6%88%90%E9%9D%A2%E5%88%86%E6%9E%90.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-guide-wall',
+      title: '导墙和构造柱 平立面及配筋图 1F',
+      category: '施工图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/02.01.1_%E5%B7%A8%E9%B9%BF%E8%B7%AF_%E5%AF%BC%E5%A2%99%E5%92%8C%E6%9E%84%E9%80%A0%E6%9F%B1_%E5%B9%B3%E7%AB%8B%E9%9D%A2%E5%8F%8A%E9%85%8D%E7%AD%8B%E5%9B%BE_1F_%E6%AD%A3%E5%BC%8F%E6%96%BD%E5%B7%A5%E5%9B%BE_2026.08.06.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-pc-brick',
+      title: '新建PC砖施工图',
+      category: '施工图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/02.1_%E6%96%B0%E5%BB%BAPC%E7%A0%96%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-pc-brick-wall',
+      title: '新建PC砖墙 平立面及配筋图 1F',
+      category: '施工图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/02.02.1_%E5%B7%A8%E9%B9%BF%E8%B7%AF_%E6%96%B0%E5%BB%BAPC%E7%A0%96%E5%A2%99_%E5%B9%B3%E7%AB%8B%E9%9D%A2%E5%8F%8A%E9%85%8D%E7%AD%8B%E5%9B%BE_1F_%E6%AD%A3%E5%BC%8F%E6%96%BD%E5%B7%A5%E5%9B%BE_2026.08.13.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-steel-frame-wall',
+      title: '新建钢架墙施工图',
+      category: '施工图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/02.2_%E6%96%B0%E5%BB%BA%E9%92%A2%E6%9E%B6%E5%A2%99%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-keel-wall',
+      title: '轻钢龙骨钢架墙 平立面图 1F',
+      category: '施工图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/02.03.1_%E5%B7%A8%E9%B9%BF%E8%B7%AF_%E8%BD%BB%E9%92%A2%E9%BE%99%E9%AA%A8%E9%92%A2%E6%9E%B6%E5%A2%99_%E5%B9%B3%E7%AB%8B%E9%9D%A2%E5%9B%BE_1F_%E6%AD%A3%E5%BC%8F%E6%96%BD%E5%B7%A5%E5%9B%BE_2026.08.21.pdf.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-wall-aluminum',
+      title: '墙面铝型材施工图',
+      category: '施工图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/03_%E5%A2%99%E9%9D%A2%E9%93%9D%E5%9E%8B%E6%9D%90%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-ceiling-finish',
+      title: '天花完成面分析',
+      category: '分析图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/04.1_%E5%A4%A9%E8%8A%B1%E5%AE%8C%E6%88%90%E9%9D%A2%E5%88%86%E6%9E%90.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-ceiling',
+      title: '天花施工图',
+      category: '施工图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/04.2_%E5%A4%A9%E8%8A%B1%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-waterproof',
+      title: '防水施工图',
+      category: '施工图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/05_%E9%98%B2%E6%B0%B4%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-floor-finish',
+      title: '地坪完成面分析',
+      category: '分析图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/06_%E5%9C%B0%E5%9D%AA%E5%AE%8C%E6%88%90%E9%9D%A2%E5%88%86%E6%9E%90.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-mep-points',
+      title: '天花地坪机电点位分析',
+      category: '分析图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/07_%E5%A4%A9%E8%8A%B1%E5%9C%B0%E5%9D%AA%E6%9C%BA%E7%94%B5%E7%82%B9%E4%BD%8D%E5%88%86%E6%9E%90.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-sanitary',
+      title: '洁具分析图',
+      category: '分析图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/08_%E6%B4%81%E5%85%B7%E5%88%86%E6%9E%90%E5%9B%BE.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-mep',
+      title: '机电施工图',
+      category: '施工图',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/09_%E6%9C%BA%E7%94%B5%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-stone-frame',
+      title: '石材·钢架深化',
+      category: '深化资料',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/10.1_%E7%9F%B3%E6%9D%90_%E9%92%A2%E6%9E%B6_20260615.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-stone',
+      title: '石材深化',
+      category: '深化资料',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/10.2.1_%E7%9F%B3%E6%9D%90_20260828.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-woodwork',
+      title: '木作·收纳深化',
+      category: '深化资料',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/11.1_%E6%9C%A8%E4%BD%9C_%E6%94%B6%E7%BA%B3_260518.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-dc-dorica',
+      title: 'DC Dorica',
+      category: '深化资料',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/DC_Dorica.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-lowell-1129',
+      title: 'Detail Making for Lowell 2024.11.29',
+      category: '深化资料',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/Detail%20Making_for%20Lowell_2024.11.29.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-lowell-1231',
+      title: 'Detail Making for Lowell 2024.12.31',
+      category: '深化资料',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/Detail%20Making_for%20Lowell_2024.12.31.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-rivsh-twin',
+      title: 'RIVSH Digital Twin',
+      category: '深化资料',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/RIVSH_Digital%20Twin_2026.08.18.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-shousugiban',
+      title: 'ShouSugiBan 研究报告',
+      category: '深化资料',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/ShouSugiBan_%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A_2025.09.30.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-wifi',
+      title: 'WI-FI 点位',
+      category: '深化资料',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/WI-FI.pdf',
+      description: ''
+    },
+    {
+      id: 'dwg-qiuhonggu',
+      title: '秋红谷·客卧2 深化',
+      category: '深化资料',
+      source: '本地文件',
+      url: 'https://yw3762737-dotcom.github.io/hiborn-craft/drawings/%E7%A7%8B%E7%BA%A2%E8%B0%B7_%E5%AE%A2%E5%8D%A72_%E6%B7%B1%E5%8C%96_2025.08.07.pdf',
+      description: ''
+    }
+  ],
+  bindings: [
+    {
+      stage: 'civil',
+      group: '土建施工方确认',
+      resourceIds: ['tender-progress']
+    },
+    {
+      stage: 'civil',
+      group: '基础装修方确认 · 独立流程',
+      resourceIds: ['tender-progress']
+    },
+    {
+      stage: 'coordination',
+      group: '木作方',
+      resourceIds: ['woodwork-joints']
+    },
+    {
+      stage: 'coordination',
+      group: '智能方',
+      items: ['智能灯光'],
+      resourceIds: ['lighting-coordination']
+    },
+    {
+      stage: 'coordination',
+      group: '设备类',
+      items: ['锅炉、热水器'],
+      resourceIds: ['water-planning', 'water-diagnostic-tool']
+    },
+    {
+      stage: 'coordination',
+      group: '洁具形式',
+      resourceIds: ['water-planning', 'water-diagnostic-tool']
+    },
+    {
+      stage: 'coordination',
+      group: '深化',
+      resourceIds: ['bim-pipeline', 'mep-layout', 'preconstruction-checklist', 'dwg-wall-setting', 'dwg-wall-finish', 'dwg-guide-wall', 'dwg-pc-brick', 'dwg-pc-brick-wall', 'dwg-steel-frame-wall', 'dwg-keel-wall', 'dwg-wall-aluminum', 'dwg-ceiling-finish', 'dwg-ceiling', 'dwg-waterproof', 'dwg-floor-finish', 'dwg-mep-points', 'dwg-sanitary', 'dwg-mep', 'dwg-stone-frame', 'dwg-stone', 'dwg-woodwork', 'dwg-dc-dorica', 'dwg-lowell-1129', 'dwg-lowell-1231', 'dwg-rivsh-twin', 'dwg-shousugiban', 'dwg-wifi', 'dwg-qiuhonggu']
+    },
+    {
+      stage: 'construction',
+      group: '水电 → 水电验收',
+      items: ['布管穿线（电）＋布管走水（水）', '水电隐蔽工程'],
+      resourceIds: ['water-planning', 'water-diagnostic-tool', 'bim-pipeline']
+    },
+    {
+      stage: 'construction',
+      group: '防水',
+      resourceIds: ['waterproofing-interfaces']
+    },
+    {
+      stage: 'construction',
+      group: '瓦工 → 瓦工验收',
+      resourceIds: ['tile-relationships']
+    },
+    {
+      stage: 'construction',
+      group: '木工 → 木工验收',
+      items: ['门套基层、房门', '木饰面、护墙板基层'],
+      resourceIds: ['woodwork-joints']
+    },
+    {
+      stage: 'construction',
+      group: '木工 → 木工验收',
+      items: ['窗帘盒、吊顶造型'],
+      resourceIds: ['lighting-coordination']
+    },
+    {
+      stage: 'construction',
+      group: '油工 → 油工验收',
+      resourceIds: ['paint-preparation']
+    },
+    {
+      stage: 'installation',
+      group: '安装内容',
+      items: ['全屋定制木作'],
+      resourceIds: ['woodwork-joints']
+    },
+    {
+      stage: 'installation',
+      group: '安装内容',
+      items: ['厨卫五金、卫浴'],
+      resourceIds: ['water-planning']
+    },
+    {
+      stage: 'installation',
+      group: '安装内容',
+      items: ['灯具、开关'],
+      resourceIds: ['lighting-coordination']
+    }
+  ]
+};
+</script><script>/* Related reading stays local; only an explicit link click opens an external page. */
+(function () {
+  'use strict';
+  const data = window.HB_RESOURCE_DATA;
+  const html = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const catalog = data.resources.filter(r => {
+    try { return ['https:', 'file:'].includes(new URL(r.url).protocol); } catch (_) { return false; }
+  });
+  const byId = new Map(catalog.map(r => [r.id, r]));
+  function forNode(si, gi, ii) {
+    const stage = FLOW[si], group = stage && stage.groups[gi];
+    if (!group) return [];
+    const ids = new Set();
+    data.bindings.forEach(b => {
+      if (b.stage !== stage.id || b.group !== group.name) return;
+      if (ii !== undefined && b.items && !b.items.includes(group.items[ii])) return;
+      b.resourceIds.forEach(id => { if (byId.has(id)) ids.add(id); });
+    });
+    return [...ids].map(id => byId.get(id));
+  }
+
+  const dialog = document.createElement('dialog');
+  dialog.id = 'resourceDialog'; dialog.className = 'resource-dialog';
+  dialog.setAttribute('aria-labelledby', 'resourceTitle');
+  dialog.innerHTML = `<div class="resource-dialog-head"><div><div class="eyebrow">RELATED KNOWLEDGE / 相关资料</div><h2 id="resourceTitle">海本资料库</h2><p id="resourceContext"></p></div><button id="closeResources" class="resource-close" aria-label="关闭相关资料">×</button></div><div class="resource-browser"><label class="sr-only" for="resourceSearch">搜索相关资料</label><input id="resourceSearch" type="search" placeholder="搜索标题、专业或关键词" autocomplete="off"><div id="resourceFilters" class="resource-filters" role="group" aria-label="筛选资料分类"></div><p id="resourceCount" class="resource-count" role="status"></p></div><div id="resourceList" class="resource-list"></div><p class="resource-footnote">原文在新页面打开，流程图会保留。小红书可能需要登录或在 App 中查看。<button id="showAllResources" type="button">查看全部资料 →</button></p>`;
+  document.querySelector('.instrument').appendChild(dialog);
+  const get = id => document.getElementById(id);
+  let context = catalog, category = '全部', returnFocus = null, wasRunning = false;
+
+  function renderList() {
+    const q = get('resourceSearch').value.trim().toLocaleLowerCase();
+    const rows = context.filter(r => (category === '全部' || r.category === category) &&
+      (!q || [r.title, r.description, r.category, r.source].join(' ').toLocaleLowerCase().includes(q)));
+    get('resourceCount').textContent = `${rows.length} 篇资料${q ? ' · 搜索结果' : ''}`;
+    get('resourceList').innerHTML = rows.length ? rows.map(r => `<article class="resource-card" data-resource-id="${html(r.id)}"><div class="resource-card-meta"><span class="category">${html(r.category)}</span><span class="source">${html(r.source)}</span></div><h3><a class="resource-card-link" href="${html(r.url)}" target="_blank" rel="noopener noreferrer">${html(r.title)}</a></h3><p>${html(r.description || '')}</p><div class="resource-card-actions"><a class="resource-open" href="${html(r.url)}" target="_blank" rel="noopener noreferrer" aria-label="打开原文：${html(r.title)}（新页面）">打开原文 ↗</a><button type="button" class="resource-copy" data-copy-resource="${html(r.id)}">复制链接</button></div></article>`).join('') : '<p class="resource-empty">没有找到相关资料，请换一个关键词或分类。</p>';
+    get('resourceFilters').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.resourceFilter === category)));
+  }
+  function openList(rows, title, note, source) {
+    if (!rows.length) return;
+    context = rows; category = '全部';
+    if (!dialog.open) {
+      returnFocus = source || document.activeElement;
+      wasRunning = running;
+      stopTour(); running = false; updateMotion();
+    }
+    get('resourceTitle').textContent = title;
+    get('resourceContext').textContent = note;
+    get('resourceSearch').value = '';
+    get('resourceFilters').innerHTML = ['全部', ...new Set(rows.map(r => r.category))].map(c => `<button type="button" data-resource-filter="${html(c)}" aria-pressed="${c === category}">${html(c)}</button>`).join('');
+    get('showAllResources').hidden = rows === catalog;
+    renderList();
+    get('resourceList').scrollTop = 0;
+    if (!dialog.open) dialog.showModal();
+    get('closeResources').focus({preventScroll:true});
+  }
+  function openNode(si, gi, ii, source) {
+    const f = FLOW[si], g = f.groups[gi];
+    openList(forNode(si, gi, ii), ii === undefined ? g.name : g.items[ii], `${f.full || f.name} / ${g.name}`, source);
+  }
+  function openLibrary(source) { openList(catalog, '海本资料库', '把每一项工作，连接到专业内容与真实案例。', source); }
+  get('closeResources').onclick = () => dialog.close();
+  dialog.addEventListener('click', e => { if (e.target === dialog) { const b = dialog.getBoundingClientRect(); if (e.clientX < b.left || e.clientX > b.right || e.clientY < b.top || e.clientY > b.bottom) dialog.close(); } });
+  dialog.addEventListener('close', () => {
+    running = wasRunning; updateMotion();
+    let target = returnFocus;
+    if (typeof target === 'string') target = document.getElementById(target);
+    if (!target || !target.isConnected) target = get('resourceLibraryBtn');
+    target?.focus({preventScroll:true});
+  });
+  get('resourceSearch').addEventListener('input', renderList);
+  get('resourceFilters').addEventListener('click', e => { const b = e.target.closest('[data-resource-filter]'); if (b) { category = b.dataset.resourceFilter; renderList(); } });
+  get('showAllResources').onclick = () => openLibrary();
+  get('resourceList').addEventListener('click', async e => {
+    const button = e.target.closest('[data-copy-resource]');
+    if (!button) return;
+    const r = byId.get(button.dataset.copyResource);
+    let copied = false;
+    try { if (navigator.clipboard) { await navigator.clipboard.writeText(r.url); copied = true; } } catch (_) {}
+    if (!copied) {
+      const field = document.createElement('textarea'); field.value = r.url; field.setAttribute('readonly','');
+      field.style.cssText = 'position:fixed;left:0;top:0;width:1px;height:1px;opacity:0'; dialog.appendChild(field); field.select();
+      try { copied = document.execCommand('copy'); } catch (_) {}
+      field.remove(); button.focus();
+    }
+    button.textContent = copied ? '已复制 ✓' : '请长按原文链接复制';
+    setTimeout(() => { if (button.isConnected) button.textContent = '复制链接'; }, 2200);
+  });
+
+  function decorateGraph() {
+    const svg = document.getElementById('diagram');
+    const p = HBTheme.palette();
+    svg.querySelectorAll('.bubble-node.group,.bubble-node.item,.branch-node').forEach(node => {
+      if (node.dataset.resourceReady) return;
+      const full = !!node.dataset.bubbleStage;
+      const si = full ? Number(node.dataset.bubbleStage) : selected;
+      const gi = Number(full ? node.dataset.bubbleGroup : node.dataset.group);
+      const item = node.id.match(/^all-item-\d+-\d+-(\d+)$/);
+      const ii = item ? Number(item[1]) : undefined;
+      const rows = forNode(si, gi, ii);
+      if (!rows.length) return;
+      node.dataset.resourceReady = 'true'; node.dataset.resourceCount = String(rows.length);
+      node.classList.add('has-resource'); node.setAttribute('aria-haspopup','dialog');
+      const label = ii === undefined ? FLOW[si].groups[gi].name : FLOW[si].groups[gi].items[ii];
+      node.setAttribute('aria-label', `${label}，查看 ${rows.length} 篇相关资料`);
+      const rect = node.querySelector('rect');
+      const x = Number(rect.getAttribute('x') || 0), y = Number(rect.getAttribute('y') || 0), w = Number(rect.getAttribute('width'));
+      const r = full ? 18 : 8, bx = full ? x+w-9 : x+w-47, by = full ? y+Number(rect.getAttribute('height'))-4 : y+28;
+      const badge = document.createElementNS('http://www.w3.org/2000/svg','g');
+      badge.setAttribute('class','resource-node-badge'); badge.setAttribute('aria-hidden','true'); badge.setAttribute('pointer-events','none');
+      badge.innerHTML = `<circle cx="${bx}" cy="${by}" r="${r}" fill="${p.accent}" stroke="${p.bg}" stroke-width="${full ? 3 : 1.5}"/><path d="M${bx-r*.38} ${by+r*.35}l${r*.73} -${r*.73}m-${r*.60} 0h${r*.60}v${r*.60}" fill="none" stroke="${p.bg}" stroke-width="${full ? 2.4 : 1.3}" stroke-linecap="round" stroke-linejoin="round"/>`;
+      node.appendChild(badge);
+      const oldClick = node.onclick;
+      node.onclick = e => {
+        if (typeof suppressBubbleClick !== 'undefined' && suppressBubbleClick) return;
+        if (oldClick) oldClick.call(node, e);
+        openNode(si, gi, ii, full ? node.id : node);
+      };
+      node.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); node.onclick(e); } };
+    });
+    const hint = document.getElementById('viewHint');
+    if (mode === 'all') hint.textContent = '全部气泡已展开 · 带 ↗ 的气泡可查看相关资料 · 放大或拖动画布阅读';
+    if (mode === 'focus') hint.textContent = '点击带 ↗ 的工作分支查看资料 · 下方明细也可直接打开';
+  }
+
+  function renderDetail() {
+    const si = selected;
+    FLOW[si].groups.forEach((g, gi) => {
+      const card = document.getElementById('group-'+gi);
+      if (!card || card.dataset.resourceReady) return;
+      card.dataset.resourceReady = 'true';
+      const rows = forNode(si, gi);
+      if (rows.length) {
+        const row = document.createElement('div'); row.className = 'resource-group-links';
+        const b = document.createElement('button'); b.type = 'button'; b.className = 'resource-group-button';
+        b.textContent = `查看本项资料 · ${rows.length} ↗`; b.setAttribute('aria-haspopup','dialog');
+        b.onclick = () => openNode(si, gi, undefined, b); row.appendChild(b); card.appendChild(row);
+      }
+      card.querySelectorAll('li').forEach((li, ii) => {
+        const items = forNode(si, gi, ii);
+        if (!items.length) return;
+        const b = document.createElement('button'); b.type = 'button'; b.className = 'resource-item-button';
+        b.textContent = '相关资料 ↗'; b.setAttribute('aria-label', g.items[ii]+'：查看相关资料'); b.setAttribute('aria-haspopup','dialog');
+        b.onclick = () => openNode(si, gi, ii, b); li.appendChild(b);
+      });
+    });
+  }
+  window.HBResources = {forNode, decorateGraph, renderDetail, openNode, openLibrary, count:catalog.length};
+  get('resourceLibraryBtn').onclick = e => openLibrary(e.currentTarget);
+}());
+</script><script>'use strict';
+const LOGO='';
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let selected=0,mode='all',running=!reduced,speed=1,tour=null,selectedMilestone=null,phase=0,lastFrame=0,raf=0,paths=[];
+const icons=[
+'<path d="M7 3h13l5 5v22H7z M20 3v7h5 M11 16h10 M11 21h10 M11 26h6"/>',
+'<path d="M4 29h26 M7 29V13h18v16 M12 13V6h8v7 M12 19h3 M20 19h2 M12 24h3 M20 24h2"/>',
+'<rect x="11" y="11" width="12" height="12" rx="2"/><path d="M17 3v8 M17 23v8 M3 17h8 M23 17h8 M6 6l6 6 M22 22l6 6 M28 6l-6 6 M12 22l-6 6"/>',
+'<path d="M5 8h24 M5 17h24 M5 26h24"/><rect x="10" y="5" width="5" height="6" rx="1"/><rect x="21" y="14" width="5" height="6" rx="1"/><rect x="8" y="23" width="5" height="6" rx="1"/>',
+'<path d="M8 5v10 M14 5v10 M5 15h12v5l-6 5v6 M23 4v8 M23 17v13 M19 12h8v5h-8z"/>',
+'<path d="M8 17V7h18v10 M5 17h24v11H5z M10 28v4 M24 28v4 M9 21h16"/>',
+'<path d="M17 3l12 5v10c0 7-12 13-12 13S5 25 5 18V8z M11 17l4 4 9-10"/>'
+];
+function defs(){return `<defs><linearGradient id="metal" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#333741"/><stop offset=".2" stop-color="#24272f"/><stop offset="1" stop-color="#14171d"/></linearGradient><linearGradient id="activeMetal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#454d5b"/><stop offset=".45" stop-color="#272e39"/><stop offset="1" stop-color="#191e26"/></linearGradient><linearGradient id="coreMetal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4a4e54"/><stop offset=".15" stop-color="#25282e"/><stop offset=".7" stop-color="#171a20"/><stop offset="1" stop-color="#30353e"/></linearGradient><filter id="pointGlow" x="-300%" y="-300%" width="700%" height="700%"><feGaussianBlur stdDeviation="2.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="nodeGlow" x="-30%" y="-50%" width="160%" height="200%"><feGaussianBlur in="SourceAlpha" stdDeviation="12" result="b"/><feFlood flood-color="#a9c5df" flood-opacity=".08"/><feComposite in2="b" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>`}
+function routePath(id,d,kind='',active=false){return `<path id="${id}" class="wire ${kind} ${active?'active':''}" d="${d}"/>`}
+function node(i,x,y){const f=FLOW[i];return `<g class="node ${selected===i?'selected':''}" data-stage="${i}" role="button" tabindex="0" aria-label="${i+1} ${f.name}，查看详细流程" transform="translate(${x-79},${y-55})"><rect class="metal" width="158" height="110" rx="14"/><path d="M15 1h128" stroke="#ffffff18"/><circle class="port" cx="0" cy="55" r="2"/><circle class="port" cx="158" cy="55" r="2"/><rect class="node-icon-back" x="16" y="14" width="34" height="34" rx="8"/><g class="node-icon" transform="translate(20,17) scale(.8)">${icons[i]}</g><text class="node-num" x="139" y="35" text-anchor="end">0${i+1}</text><text class="node-title" x="16" y="72">${f.name}</text><text class="node-en" x="16" y="94">${esc(enFor(f.name))}</text></g>`}
+function core(x,y){return `<g transform="translate(${x-86},${y-39})">${Array.from({length:9},(_,i)=>`<path class="core-pin" d="M${22+i*16} -5v5 M${22+i*16} 78v5"/>`).join('')}<rect class="core-body" width="172" height="78" rx="16"/><rect x="5" y="5" width="162" height="68" rx="12" fill="#080a0e44" stroke="#ffffff09"/><text x="86" y="37" text-anchor="middle" class="core-wordmark">HIBORN</text><text x="86" y="59" text-anchor="middle" class="core-tagline">高标装修全过程管理</text><circle cx="86" cy="0" r="2.4" fill="#ecf3ff" filter="url(#pointGlow)"/></g>`}
+function renderGraph(){const svg=$('#diagram'),full=mode==='all';$('.instrument').classList.toggle('all-mode',full);$('#mapToolbar').hidden=!full;if(full){renderAllGraph();return}$('#canvasWrap').style.height='';svg.style.width='';svg.style.height='';svg.setAttribute('viewBox','0 0 1440 510');svg.setAttribute('aria-label','七个阶段与当前阶段的工作分支');let content=defs(),animateIds=[];
+if(mode==='overview'){
+const xs=FLOW.map((_,i)=>132+i*196),ys=[169,145,169,137,169,145,169];
+content+='<text x="52" y="46" class="graph-label">01 — 07 / THE COMPLETE JOURNEY</text><text x="1386" y="46" text-anchor="end" class="graph-label">从需求到交付 · 顺序流程 →</text>';
+FLOW.forEach((f,i)=>{const startX=xs[i],startY=ys[i]+55;const id='govern-'+i;content+=routePath(id,`M720 365 C720 287 ${startX} 328 ${startX} ${startY}`,'governance',i===selected);animateIds.push({id,govern:true});});
+for(let i=0;i<6;i++){const a=xs[i]+79,b=xs[i+1]-79;const id='stage-wire-'+i;content+=routePath(id,`M${a} ${ys[i]} C${a+22} ${ys[i]} ${b-22} ${ys[i+1]} ${b} ${ys[i+1]}`,'',i===selected||i+1===selected);animateIds.push({id});}
+FLOW.forEach((f,i)=>{content+=node(i,xs[i],ys[i]);content+=`<text x="${xs[i]}" y="${ys[i]+86}" text-anchor="middle" class="graph-label" style="font-size:9px;letter-spacing:0">${esc(f.caption)}</text>`});
+content+=core(720,404);content+='<text x="720" y="479" text-anchor="middle" class="graph-label">专业协同 / 预算控制 / 节点确认 / 过程追踪</text>';
+}else{
+const f=FLOW[selected],n=f.groups.length,ys=f.groups.map((_,i)=>n===1?245:85+i*(345/(n-1)));
+content+=`<text x="52" y="37" class="graph-label">0${selected+1} / ${f.en} / ${esc(f.full||f.name)}</text><text x="1386" y="37" text-anchor="end" class="graph-label">工作分支 · 点击分支查看下方明细</text>`;
+f.groups.forEach((g,i)=>{const y=ys[i],a='branch-'+i,b='result-'+i;content+=routePath(a,`M325 253 C460 253 460 ${y} 582 ${y}`,'',true);content+=routePath(b,`M918 ${y} C1030 ${y} 1020 253 1120 253`,'governance');animateIds.push({id:a},{id:b,govern:true})});
+content+=node(selected,246,253);
+f.groups.forEach((g,i)=>{const y=ys[i];let name=g.name.split(' · ')[0];content+=`<g class="node branch-node" data-group="${i}" role="button" tabindex="0" aria-label="查看${esc(name)}"><rect class="metal" x="582" y="${y-28}" width="336" height="56" rx="10"/><circle class="port" cx="582" cy="${y}" r="2"/><circle class="port" cx="918" cy="${y}" r="2"/><text class="branch-label" x="601" y="${y-2}">${esc(name)}</text><text class="branch-en" data-en="true" x="601" y="${y+17}">${esc(enFor(name))}</text><text class="branch-count" x="901" y="${y+4}" text-anchor="end">${String(g.items.length).padStart(2,'0')}</text></g>`});
+content+=`<rect x="1120" y="199" width="228" height="108" rx="13" fill="url(#coreMetal)" stroke="#ffffff24"/><text x="1234" y="232" text-anchor="middle" class="node-title">阶段结果汇总</text><text x="1234" y="253" text-anchor="middle" class="branch-en" data-en="true">Stage Deliverables</text><text x="1234" y="276" text-anchor="middle" class="core-sub">专业协调 · 核对与交接</text><text x="1234" y="294" text-anchor="middle" class="branch-en" data-en="true">Trade Coordination · Review &amp; Handover</text><text x="720" y="487" text-anchor="middle" class="graph-label">分支表示工作分类；具体顺序、并列关系与整改回路详见下方明细</text>`;
+}
+content+='<g id="particles">'+animateIds.map((p,i)=>`<circle data-path="${p.id}" data-index="${i}" data-govern="${p.govern?1:0}" class="flow-dot" r="${p.govern?1.25:1.9}" opacity="0"/>`).join('')+'</g>';
+svg.innerHTML=content;paths=[...svg.querySelectorAll('[data-path]')].map((dot,i)=>{const p=document.getElementById(dot.dataset.path);return {dot,p,len:p.getTotalLength(),offset:(i*.213)%1,govern:dot.dataset.govern==='1'}});
+svg.querySelectorAll('[data-stage]').forEach(g=>{const act=()=>{const si=+g.dataset.stage;if(mode==='overview'){selected=si;updateDetail();setMode('focus');$('#announcement').textContent='当前阶段：'+FLOW[selected].name;}else selectStage(si)};g.onclick=act;g.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}}});
+svg.querySelectorAll('[data-group]').forEach(g=>{const act=()=>{const i=+g.dataset.group;document.querySelectorAll('.group-card').forEach(c=>c.classList.toggle('selected',c.id==='group-'+i));$('#group-'+i).scrollIntoView({behavior:reduced?'auto':'smooth',block:'center'});};g.onclick=act;g.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}}});
+$('#viewHint').textContent=mode==='overview'?(innerWidth<1000?'左右滑动查看全程 · 点击阶段进入展开视图':'点击阶段，进入该阶段展开视图'):'点击工作分支，定位下方详细内容';
+window.HBResources?.decorateGraph();
+drawParticles();
+}
+function drawParticles(){paths.forEach(({dot,p,len,offset,govern})=>{const pos=(phase/(govern?8:3.5)+offset)%1;const pt=p.getPointAtLength(pos*len);dot.setAttribute('cx',pt.x);dot.setAttribute('cy',pt.y);dot.setAttribute('opacity',Math.min(1,pos*10,(1-pos)*10)*(govern?.58:.98))})}
+function tick(now){if(lastFrame&&running&&!document.hidden)phase+=(now-lastFrame)/1000*speed;lastFrame=now;if(running&&!document.hidden)drawParticles();raf=requestAnimationFrame(tick)}
+function stopTour(){if(tour){clearInterval(tour);tour=null;$('#tourBtn').textContent='▷ 逐阶段演示'}}
+function selectStage(i,fromTour=false){if(!fromTour)stopTour();selected=Math.max(0,Math.min(6,i));selectedMilestone=null;updateDetail();renderGraph();$('#announcement').textContent='当前阶段：'+FLOW[selected].name;}
+function updateDetail(){const f=FLOW[selected];$('#detailEyebrow').textContent=`0${selected+1} / ${f.en} / ${f.full||f.name}`;$('#detailTitle').textContent=f.title;$('#detailSummary').textContent=f.summary;$('#budgetLabel').textContent=f.budget;$('#resultText').textContent=f.result;
+$('#stageNav').innerHTML=FLOW.map((f,i)=>`<button class="${i===selected?'active':''}" data-stage-nav="${i}" ${i===selected?'aria-current="step"':''}><span>0${i+1}</span>${f.name}</button>`).join('');document.querySelectorAll('[data-stage-nav]').forEach(b=>b.onclick=()=>selectStage(+b.dataset.stageNav));
+$('#groupList').innerHTML=f.groups.map((g,i)=>`<article class="group-card" id="group-${i}"><div class="group-card-head"><h3>${esc(g.name)}<span class="detail-en">${esc(enFor(g.name))}</span></h3><span class="group-kind">${g.kind==='sequence'?'SEQUENCE ↓':'PARALLEL'}</span></div><${g.kind==='sequence'?'ol':'ul'}>${g.items.map(t=>'<li>'+esc(t)+'<span class="detail-en">'+esc(enFor(t))+'</span></li>').join('')}</${g.kind==='sequence'?'ol':'ul'}>${g.loop?'<p class="loop-note">↶ '+esc(g.loop)+'</p>':''}</article>`).join('')+(f.note?'<p class="group-note">'+esc(f.note)+'</p>':'');
+$('#milestoneNav').innerHTML=MILESTONES.map(m=>`<button class="milestone ${m.stage===selected?'in-stage':''}" data-milestone="${m.id}" aria-label="节点${m.id}：${m.title}">${String(m.id).padStart(2,'0')}</button>`).join('');document.querySelectorAll('[data-milestone]').forEach(b=>b.onclick=()=>{const id=+b.dataset.milestone,m=MILESTONES.find(m=>m.id===id);selectStage(m.stage);selectedMilestone=id;document.querySelectorAll('[data-milestone]').forEach(x=>x.classList.toggle('selected',+x.dataset.milestone===id));$('#milestoneHint').textContent=m.title+' · '+m.desc;$('#announcement').textContent=m.title+'，'+m.desc});
+const own=MILESTONES.filter(m=>m.stage===selected);$('#milestoneHint').textContent=own.length?'本阶段参与：'+own.map(m=>String(m.id).padStart(2,'0')+' '+m.title).join(' / '):'本阶段聚焦专业协同，重要验收时刻见编号节点。';
+$('#nextStage').textContent=selected===6?'回到第一阶段 ↺':'下一阶段 →';window.HBResources?.renderDetail();}
+function setMode(m){mode=m;$('#allGraphBtn').setAttribute('aria-pressed',mode==='all');$('#overviewBtn').setAttribute('aria-pressed',mode==='overview');$('#focusBtn').setAttribute('aria-pressed',mode==='focus');$('#canvasWrap').style.touchAction=m==='all'?'none':'';renderGraph();$('#canvasWrap').scrollLeft=0;}
+function updateMotion(){$('#motionBtn').textContent=running?'Ⅱ 暂停光点':'▷ 播放光点';$('#motionBtn').setAttribute('aria-pressed',String(running));$('#signalLabel').textContent=running?'协同流动':'动态已暂停';lastFrame=0}
+$('#allGraphBtn').onclick=()=>setMode('all');$('#overviewBtn').onclick=()=>setMode('overview');$('#focusBtn').onclick=()=>setMode('focus');$('#motionBtn').onclick=()=>{running=!running;updateMotion()};$('#speedSelect').onchange=e=>{speed=Number(e.target.value)};$('#nextStage').onclick=()=>selectStage((selected+1)%7);
+$('#tourBtn').onclick=()=>{if(tour){stopTour();return}selectStage(0,true);mode='focus';setMode('focus');running=true;updateMotion();$('#tourBtn').textContent='■ 停止演示';tour=setInterval(()=>{if(selected>=6){stopTour();return}selectStage(selected+1,true)},5000)};
+$('#allToggle').onclick=()=>{const open=$('#allContent').hidden;$('#allContent').hidden=!open;$('#allToggle').setAttribute('aria-expanded',String(open));$('#allSymbol').textContent=open?'−':'＋';if(open&&!$('#allContent').innerHTML)$('#allContent').innerHTML=FLOW.map((f,i)=>`<article class="all-stage"><div><div class="eyebrow">0${i+1} / ${f.en}</div><h3>${f.full||f.name}</h3><p class="small">${f.budget}</p></div><div class="all-groups">${f.groups.map(g=>`<div><h4>${esc(g.name)}</h4><p>${g.items.map(esc).join(g.kind==='sequence'?' → ':' / ')}</p>${g.loop?'<p class="small">↶ '+esc(g.loop)+'</p>':''}</div>`).join('')}${f.note?'<p>'+esc(f.note)+'</p>':''}</div></article>`).join('')};
+$('.brand').onclick=e=>{e.preventDefault();selectStage(0);setMode('all');window.scrollTo({top:0,behavior:reduced?'auto':'smooth'})};
+function toast(t){$('#toast').textContent=t;$('#toast').classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('#toast').classList.remove('show'),3500)}
+function breakLines(t,max){const lines=[];let s='';for(const c of t){if(s.length>=max){lines.push(s);s=''}s+=c}if(s)lines.push(s);return lines}
+$('#exportBtn').onclick=exportPoster;wireMapControls();updateDetail();renderGraph();updateMotion();raf=requestAnimationFrame(tick);document.addEventListener('visibilitychange',()=>{lastFrame=0});
+</script></body></html>
