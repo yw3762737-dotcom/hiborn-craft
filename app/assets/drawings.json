@@ -1,0 +1,202 @@
+[
+ {
+  "id": "dwg-wall-setting",
+  "title": "墙面完成面放线平面图 1F~3F",
+  "category": "施工图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/01.01_%E5%B7%A8%E9%B9%BF%E8%B7%AF_%E5%A2%99%E9%9D%A2%E5%AE%8C%E6%88%90%E9%9D%A2%E6%94%BE%E7%BA%BF%E5%B9%B3%E9%9D%A2%E5%9B%BE_1F~3F_%E6%AD%A3%E5%BC%8F%E6%96%BD%E5%B7%A5%E5%9B%BE_2026.07.29.pdf",
+  "file": "01.01_%E5%B7%A8%E9%B9%BF%E8%B7%AF_%E5%A2%99%E9%9D%A2%E5%AE%8C%E6%88%90%E9%9D%A2%E6%94%BE%E7%BA%BF%E5%B9%B3%E9%9D%A2%E5%9B%BE_1F~3F_%E6%AD%A3%E5%BC%8F%E6%96%BD%E5%B7%A5%E5%9B%BE_2026.07.29.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-wall-finish",
+  "title": "墙面完成面分析",
+  "category": "分析图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/01_%E5%A2%99%E9%9D%A2%E5%AE%8C%E6%88%90%E9%9D%A2%E5%88%86%E6%9E%90.pdf",
+  "file": "01_%E5%A2%99%E9%9D%A2%E5%AE%8C%E6%88%90%E9%9D%A2%E5%88%86%E6%9E%90.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-guide-wall",
+  "title": "导墙和构造柱 平立面及配筋图 1F",
+  "category": "施工图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/02.01.1_%E5%B7%A8%E9%B9%BF%E8%B7%AF_%E5%AF%BC%E5%A2%99%E5%92%8C%E6%9E%84%E9%80%A0%E6%9F%B1_%E5%B9%B3%E7%AB%8B%E9%9D%A2%E5%8F%8A%E9%85%8D%E7%AD%8B%E5%9B%BE_1F_%E6%AD%A3%E5%BC%8F%E6%96%BD%E5%B7%A5%E5%9B%BE_2026.08.06.pdf",
+  "file": "02.01.1_%E5%B7%A8%E9%B9%BF%E8%B7%AF_%E5%AF%BC%E5%A2%99%E5%92%8C%E6%9E%84%E9%80%A0%E6%9F%B1_%E5%B9%B3%E7%AB%8B%E9%9D%A2%E5%8F%8A%E9%85%8D%E7%AD%8B%E5%9B%BE_1F_%E6%AD%A3%E5%BC%8F%E6%96%BD%E5%B7%A5%E5%9B%BE_2026.08.06.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-pc-brick",
+  "title": "新建PC砖施工图",
+  "category": "施工图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/02.1_%E6%96%B0%E5%BB%BAPC%E7%A0%96%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf",
+  "file": "02.1_%E6%96%B0%E5%BB%BAPC%E7%A0%96%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-pc-brick-wall",
+  "title": "新建PC砖墙 平立面及配筋图 1F",
+  "category": "施工图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/02.02.1_%E5%B7%A8%E9%B9%BF%E8%B7%AF_%E6%96%B0%E5%BB%BAPC%E7%A0%96%E5%A2%99_%E5%B9%B3%E7%AB%8B%E9%9D%A2%E5%8F%8A%E9%85%8D%E7%AD%8B%E5%9B%BE_1F_%E6%AD%A3%E5%BC%8F%E6%96%BD%E5%B7%A5%E5%9B%BE_2026.08.13.pdf",
+  "file": "02.02.1_%E5%B7%A8%E9%B9%BF%E8%B7%AF_%E6%96%B0%E5%BB%BAPC%E7%A0%96%E5%A2%99_%E5%B9%B3%E7%AB%8B%E9%9D%A2%E5%8F%8A%E9%85%8D%E7%AD%8B%E5%9B%BE_1F_%E6%AD%A3%E5%BC%8F%E6%96%BD%E5%B7%A5%E5%9B%BE_2026.08.13.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-steel-frame-wall",
+  "title": "新建钢架墙施工图",
+  "category": "施工图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/02.2_%E6%96%B0%E5%BB%BA%E9%92%A2%E6%9E%B6%E5%A2%99%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf",
+  "file": "02.2_%E6%96%B0%E5%BB%BA%E9%92%A2%E6%9E%B6%E5%A2%99%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-keel-wall",
+  "title": "轻钢龙骨钢架墙 平立面图 1F",
+  "category": "施工图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/02.03.1_%E5%B7%A8%E9%B9%BF%E8%B7%AF_%E8%BD%BB%E9%92%A2%E9%BE%99%E9%AA%A8%E9%92%A2%E6%9E%B6%E5%A2%99_%E5%B9%B3%E7%AB%8B%E9%9D%A2%E5%9B%BE_1F_%E6%AD%A3%E5%BC%8F%E6%96%BD%E5%B7%A5%E5%9B%BE_2026.08.21.pdf.pdf",
+  "file": "02.03.1_%E5%B7%A8%E9%B9%BF%E8%B7%AF_%E8%BD%BB%E9%92%A2%E9%BE%99%E9%AA%A8%E9%92%A2%E6%9E%B6%E5%A2%99_%E5%B9%B3%E7%AB%8B%E9%9D%A2%E5%9B%BE_1F_%E6%AD%A3%E5%BC%8F%E6%96%BD%E5%B7%A5%E5%9B%BE_2026.08.21.pdf.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-wall-aluminum",
+  "title": "墙面铝型材施工图",
+  "category": "施工图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/03_%E5%A2%99%E9%9D%A2%E9%93%9D%E5%9E%8B%E6%9D%90%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf",
+  "file": "03_%E5%A2%99%E9%9D%A2%E9%93%9D%E5%9E%8B%E6%9D%90%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-ceiling-finish",
+  "title": "天花完成面分析",
+  "category": "分析图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/04.1_%E5%A4%A9%E8%8A%B1%E5%AE%8C%E6%88%90%E9%9D%A2%E5%88%86%E6%9E%90.pdf",
+  "file": "04.1_%E5%A4%A9%E8%8A%B1%E5%AE%8C%E6%88%90%E9%9D%A2%E5%88%86%E6%9E%90.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-ceiling",
+  "title": "天花施工图",
+  "category": "施工图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/04.2_%E5%A4%A9%E8%8A%B1%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf",
+  "file": "04.2_%E5%A4%A9%E8%8A%B1%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-waterproof",
+  "title": "防水施工图",
+  "category": "施工图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/05_%E9%98%B2%E6%B0%B4%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf",
+  "file": "05_%E9%98%B2%E6%B0%B4%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-floor-finish",
+  "title": "地坪完成面分析",
+  "category": "分析图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/06_%E5%9C%B0%E5%9D%AA%E5%AE%8C%E6%88%90%E9%9D%A2%E5%88%86%E6%9E%90.pdf",
+  "file": "06_%E5%9C%B0%E5%9D%AA%E5%AE%8C%E6%88%90%E9%9D%A2%E5%88%86%E6%9E%90.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-mep-points",
+  "title": "天花地坪机电点位分析",
+  "category": "分析图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/07_%E5%A4%A9%E8%8A%B1%E5%9C%B0%E5%9D%AA%E6%9C%BA%E7%94%B5%E7%82%B9%E4%BD%8D%E5%88%86%E6%9E%90.pdf",
+  "file": "07_%E5%A4%A9%E8%8A%B1%E5%9C%B0%E5%9D%AA%E6%9C%BA%E7%94%B5%E7%82%B9%E4%BD%8D%E5%88%86%E6%9E%90.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-sanitary",
+  "title": "洁具分析图",
+  "category": "分析图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/08_%E6%B4%81%E5%85%B7%E5%88%86%E6%9E%90%E5%9B%BE.pdf",
+  "file": "08_%E6%B4%81%E5%85%B7%E5%88%86%E6%9E%90%E5%9B%BE.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-mep",
+  "title": "机电施工图",
+  "category": "施工图",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/09_%E6%9C%BA%E7%94%B5%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf",
+  "file": "09_%E6%9C%BA%E7%94%B5%E6%96%BD%E5%B7%A5%E5%9B%BE.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-stone-frame",
+  "title": "石材·钢架深化",
+  "category": "深化资料",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/10.1_%E7%9F%B3%E6%9D%90_%E9%92%A2%E6%9E%B6_20260615.pdf",
+  "file": "10.1_%E7%9F%B3%E6%9D%90_%E9%92%A2%E6%9E%B6_20260615.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-stone",
+  "title": "石材深化",
+  "category": "深化资料",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/10.2.1_%E7%9F%B3%E6%9D%90_20260828.pdf",
+  "file": "10.2.1_%E7%9F%B3%E6%9D%90_20260828.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-woodwork",
+  "title": "木作·收纳深化",
+  "category": "深化资料",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/11.1_%E6%9C%A8%E4%BD%9C_%E6%94%B6%E7%BA%B3_260518.pdf",
+  "file": "11.1_%E6%9C%A8%E4%BD%9C_%E6%94%B6%E7%BA%B3_260518.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-dc-dorica",
+  "title": "DC Dorica",
+  "category": "深化资料",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/DC_Dorica.pdf",
+  "file": "DC_Dorica.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-lowell-1129",
+  "title": "Detail Making for Lowell 2024.11.29",
+  "category": "深化资料",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/Detail%20Making_for%20Lowell_2024.11.29.pdf",
+  "file": "Detail%20Making_for%20Lowell_2024.11.29.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-lowell-1231",
+  "title": "Detail Making for Lowell 2024.12.31",
+  "category": "深化资料",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/Detail%20Making_for%20Lowell_2024.12.31.pdf",
+  "file": "Detail%20Making_for%20Lowell_2024.12.31.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-rivsh-twin",
+  "title": "RIVSH Digital Twin",
+  "category": "深化资料",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/RIVSH_Digital%20Twin_2026.08.18.pdf",
+  "file": "RIVSH_Digital%20Twin_2026.08.18.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-shousugiban",
+  "title": "ShouSugiBan 研究报告",
+  "category": "深化资料",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/ShouSugiBan_%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A_2025.09.30.pdf",
+  "file": "ShouSugiBan_%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A_2025.09.30.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-wifi",
+  "title": "WI-FI 点位",
+  "category": "深化资料",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/WI-FI.pdf",
+  "file": "WI-FI.pdf",
+  "description": ""
+ },
+ {
+  "id": "dwg-qiuhonggu",
+  "title": "秋红谷·客卧2 深化",
+  "category": "深化资料",
+  "url": "https://yw3762737-dotcom.github.io/hiborn-craft/drawings/%E7%A7%8B%E7%BA%A2%E8%B0%B7_%E5%AE%A2%E5%8D%A72_%E6%B7%B1%E5%8C%96_2025.08.07.pdf",
+  "file": "%E7%A7%8B%E7%BA%A2%E8%B0%B7_%E5%AE%A2%E5%8D%A72_%E6%B7%B1%E5%8C%96_2025.08.07.pdf",
+  "description": ""
+ }
+]

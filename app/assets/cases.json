@@ -1,0 +1,150 @@
+[
+ {
+  "key": "heyuan",
+  "category": "partner private",
+  "title": "曲江公馆和园",
+  "type": "高文安老师项目 · 实景照片",
+  "summary": "曲江公馆和园项目实景，呈现大尺度空间、黑白关系、玻璃构造与精细收口的协同落地。",
+  "challenge": "尊重设计原意，同时协调建筑条件、定制加工与现场安装之间的关系。",
+  "action": "图纸复核、五步放线、关键节点深化、工序交底与阶段验收。",
+  "result": "以现场实景验证设计与施工协同的全过程落地能力。",
+  "cover": "assets/cases/heyuan/cover.webp",
+  "photos": [
+   "assets/cases/heyuan/01.webp",
+   "assets/cases/heyuan/02.webp",
+   "assets/cases/heyuan/03.webp",
+   "assets/cases/heyuan/04.webp",
+   "assets/cases/heyuan/05.webp",
+   "assets/cases/heyuan/06.webp"
+  ]
+ },
+ {
+  "key": "source",
+  "category": "partner private",
+  "title": "源邸壹号 · 260㎡",
+  "type": "原香港 CCD 合伙人刘力硕老师项目 · 实景照片",
+  "summary": "源邸壹号 260㎡项目，由海本承担施工落地服务，现保留原项目实景照片。",
+  "challenge": "深色材料、弧形构造与灯光关系需要在深化和安装阶段保持一致。",
+  "action": "完成面复核、材料交界深化、现场放线与节点过程管控。",
+  "result": "以细腻材质关系和空间秩序呈现实景落地。",
+  "cover": "assets/cases/source/cover.webp",
+  "photos": []
+ },
+ {
+  "key": "tanfu",
+  "category": "partner private",
+  "title": "泰发祥檀府 · 330㎡",
+  "type": "无间设计吴滨老师项目 · 样板间实景照片",
+  "summary": "泰发祥檀府 330㎡样板间，坐落于大唐不夜城，为西安高端住宅项目，现保留原项目实景照片。",
+  "challenge": "样板间需要在紧凑周期内保持设计比例、材质质感与节点精度。",
+  "action": "图纸深化、材料与样板确认、施工排期、现场直管与关键节点验收。",
+  "result": "以专业施工水准服务一线设计机构的落地要求。",
+  "cover": "assets/cases/tanfu/cover.webp",
+  "photos": []
+ },
+ {
+  "key": "changanxi",
+  "category": "private",
+  "title": "航天城招商长安玺",
+  "type": "高端住宅 · 实景照片",
+  "summary": "航天城招商长安玺项目实景，以温润木色、自然光与定制收纳构成松弛而有秩序的居住场景。",
+  "challenge": "木作、灯光、设备与生活功能需要在统一完成面中精准衔接。",
+  "action": "木作深化、设备点位复核、灯光安装管控与交界收口验收。",
+  "result": "让功能需求与空间氛围在实景中同时成立。",
+  "cover": "assets/cases/changanxi/cover.webp",
+  "photos": [
+   "assets/cases/changanxi/01.webp",
+   "assets/cases/changanxi/02.webp",
+   "assets/cases/changanxi/03.webp",
+   "assets/cases/changanxi/04.webp",
+   "assets/cases/changanxi/05.webp"
+  ]
+ },
+ {
+  "key": "yuexi",
+  "category": "private",
+  "title": "曲江华润悦玺",
+  "type": "高端住宅 · 实景照片",
+  "summary": "曲江华润悦玺项目实景，以浅木色厨房、整墙门板与艺术墙面呈现简洁通透的日常空间。",
+  "challenge": "开放厨房的柜体尺度、机电点位和照明需要同步深化。",
+  "action": "全屋放线、柜体复尺、机电综合与安装顺序统筹。",
+  "result": "形成轻盈、整洁并便于长期使用的完成效果。",
+  "cover": "assets/cases/yuexi/cover.webp",
+  "photos": [
+   "assets/cases/yuexi/01.webp",
+   "assets/cases/yuexi/02.webp",
+   "assets/cases/yuexi/03.webp",
+   "assets/cases/yuexi/04.webp"
+  ]
+ },
+ {
+  "key": "jintai",
+  "category": "private",
+  "title": "金泰唐618",
+  "type": "高端住宅 · 实景照片",
+  "summary": "金泰唐618项目实景，聚焦开放公共区、套房收纳与高完成度柜体系统。",
+  "challenge": "大面积浅色材料对基层平整度、拼缝和柜门精度要求更高。",
+  "action": "基层找平、柜体深化、材料交界复核与安装过程巡检。",
+  "result": "以克制细节获得明亮、连续的整体空间。",
+  "cover": "assets/cases/jintai/cover.webp",
+  "photos": [
+   "assets/cases/jintai/01.webp",
+   "assets/cases/jintai/02.webp",
+   "assets/cases/jintai/03.webp",
+   "assets/cases/jintai/04.webp"
+  ]
+ },
+ {
+  "key": "fenghua",
+  "category": "private",
+  "title": "沣华熙城",
+  "type": "高端住宅 · 实景照片",
+  "summary": "沣华熙城项目实景，黑白基调、连续收纳和艺术陈设共同构成简洁有力的空间表达。",
+  "challenge": "深浅材料的边界、整墙柜体与软装尺度需要整体控制。",
+  "action": "完成面预控、柜体节点深化、灯光定位与最终安装校验。",
+  "result": "在清晰秩序中保留居住舒适度与视觉张力。",
+  "cover": "assets/cases/fenghua/cover.webp",
+  "photos": [
+   "assets/cases/fenghua/01.webp",
+   "assets/cases/fenghua/02.webp",
+   "assets/cases/fenghua/03.webp",
+   "assets/cases/fenghua/04.webp"
+  ]
+ },
+ {
+  "key": "huazhu",
+  "category": "private",
+  "title": "曲江华著中城",
+  "type": "高端住宅 · 实景照片",
+  "summary": "曲江华著中城项目实景，集中呈现免胶离缝、嵌入壁龛、隐形门与异形定制的细节完成度。",
+  "challenge": "柜体、门、灯光与墙面由多个专业完成，交界处最容易暴露误差。",
+  "action": "施工前明确分缝、结构、材料厚度与安装顺序，并逐项复核控制点。",
+  "result": "高级感不依赖装饰堆叠，而来自每一道边界的准确。",
+  "cover": "assets/cases/huazhu/cover.webp",
+  "photos": [
+   "assets/cases/huazhu/01.webp",
+   "assets/cases/huazhu/02.webp",
+   "assets/cases/huazhu/03.webp",
+   "assets/cases/huazhu/04.webp",
+   "assets/cases/huazhu/05.webp"
+  ]
+ },
+ {
+  "key": "rongmin",
+  "category": "private",
+  "title": "高新荣民捌号",
+  "type": "高端住宅 · 实景照片",
+  "summary": "高新荣民捌号项目实景，以石材肌理、悬浮灯光和极窄收口呈现节点控制能力。",
+  "challenge": "不同厚度材料和隐藏光源需要在基层阶段预留准确结构。",
+  "action": "节点大样确认、基层尺寸复核、灯光安装管控与收口验收。",
+  "result": "以细部实景展示完成面精度和多专业统筹能力。",
+  "cover": "assets/cases/rongmin/cover.webp",
+  "photos": [
+   "assets/cases/rongmin/01.webp",
+   "assets/cases/rongmin/02.webp",
+   "assets/cases/rongmin/03.webp",
+   "assets/cases/rongmin/04.webp",
+   "assets/cases/rongmin/05.webp"
+  ]
+ }
+]

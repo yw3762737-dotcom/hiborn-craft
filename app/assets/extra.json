@@ -1,0 +1,69 @@
+{
+ "craft": [
+  {
+   "letter": "A",
+   "name": "五步放线",
+   "img": "assets/craft/A.webp"
+  },
+  {
+   "letter": "B",
+   "name": "施工预演",
+   "img": "assets/craft/B.webp"
+  },
+  {
+   "letter": "C",
+   "name": "水电工艺",
+   "img": "assets/craft/C.webp"
+  },
+  {
+   "letter": "D",
+   "name": "木工工艺",
+   "img": "assets/craft/D.webp"
+  },
+  {
+   "letter": "E",
+   "name": "瓦工工艺",
+   "img": "assets/craft/E.webp"
+  },
+  {
+   "letter": "F",
+   "name": "油工工艺",
+   "img": "assets/craft/F.webp"
+  },
+  {
+   "letter": "G",
+   "name": "深水封与同层排水",
+   "img": "assets/craft/G.webp"
+  },
+  {
+   "letter": "H",
+   "name": "快装龙骨",
+   "img": "assets/craft/H.webp"
+  },
+  {
+   "letter": "I",
+   "name": "六恒系统",
+   "img": "assets/craft/I.webp"
+  },
+  {
+   "letter": "J",
+   "name": "防水·灯光及柜体安装管控",
+   "img": "assets/craft/J.webp"
+  }
+ ],
+ "team": [
+  {
+   "title": "海本精造创始人薛小佳",
+   "img": "assets/team/1.webp"
+  },
+  {
+   "title": "方案深化负责人王一乐",
+   "img": "assets/team/2.webp"
+  },
+  {
+   "title": "专业直管团队进行图纸深化与项目协同的概念图",
+   "img": "assets/team/3.webp"
+  }
+ ],
+ "logo": "assets/brand/logo.webp"
+}

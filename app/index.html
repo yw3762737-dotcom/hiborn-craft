@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>海本精造 · 项目管理交互平台</title>
+<style>
+:root{
+  --bg:#0d0d0f; --bg2:#141416; --bg3:#1b1b1f; --line:#2a2a30;
+  --txt:#ece7dd; --txt2:#a39e93; --txt3:#6f6a61;
+  --gold:#c8a15e; --gold2:#e2c88f; --gold-dim:rgba(200,161,94,.14);
+  --radius:14px;
+  --font-song:"Noto Serif SC","Songti SC","STSong",serif;
+  --font-hei:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--txt);font-family:var(--font-hei);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+/* ===== 顶栏 ===== */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(13,13,15,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand img{height:30px;width:auto}
+.brand-name{font-family:var(--font-song);font-size:17px;letter-spacing:2px;white-space:nowrap}
+.brand-sub{font-size:10px;color:var(--txt3);letter-spacing:1px;display:block;line-height:1.2}
+.nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{padding:8px 14px;border-radius:99px;font-size:13.5px;color:var(--txt2);white-space:nowrap;transition:.2s}
+.nav a:hover{color:var(--txt)}
+.nav a.on{color:var(--gold2);background:var(--gold-dim)}
+
+/* ===== 布局 ===== */
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 90px}
+.page{display:none;animation:fade .35s ease}
+.page.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ===== 首页 ===== */
+.hero{padding:76px 0 54px;text-align:center;position:relative}
+.hero-logo{height:64px;margin:0 auto 26px;opacity:.95}
+.hero h1{font-family:var(--font-song);font-size:clamp(26px,4.6vw,42px);font-weight:600;letter-spacing:4px}
+.hero p{color:var(--txt2);margin-top:16px;font-size:15px;letter-spacing:1px}
+.hero-line{width:44px;height:1px;background:var(--gold);margin:26px auto 0;opacity:.7}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:46px 0 8px}
+.stat{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:22px 10px;text-align:center}
+.stat b{display:block;font-family:var(--font-song);font-size:30px;color:var(--gold2);font-weight:600}
+.stat span{font-size:12px;color:var(--txt3);letter-spacing:2px}
+.sec-title{font-family:var(--font-song);font-size:20px;letter-spacing:3px;margin:52px 0 6px;display:flex;align-items:center;gap:12px}
+.sec-title::before{content:"";width:20px;height:1px;background:var(--gold)}
+.sec-desc{color:var(--txt3);font-size:13px;margin-bottom:22px}
+.entries{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.entry{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;display:flex;align-items:center;gap:18px;transition:.25s;cursor:pointer}
+.entry:hover{border-color:var(--gold);transform:translateY(-2px)}
+.entry-ico{width:46px;height:46px;border-radius:12px;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0}
+.entry h3{font-size:16px;font-weight:600;letter-spacing:1px}
+.entry p{font-size:12.5px;color:var(--txt3);margin-top:3px}
+.entry .go{margin-left:auto;color:var(--gold);font-size:18px}
+
+/* ===== 卡片网格 ===== */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:.25s}
+.card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.card-img{aspect-ratio:4/3;overflow:hidden;background:var(--bg3)}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.card:hover .card-img img{transform:scale(1.05)}
+.card-body{padding:14px 16px 16px}
+.card-body h3{font-family:var(--font-song);font-size:16px;letter-spacing:1px}
+.card-body .t2{font-size:12px;color:var(--txt3);margin-top:4px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);color:var(--txt2)}
+.tag.gold{border-color:rgba(200,161,94,.45);color:var(--gold2)}
+
+/* ===== 项目工作台 ===== */
+.crumb{display:flex;align-items:center;gap:10px;padding:22px 0 0;font-size:13px;color:var(--txt3)}
+.crumb a{color:var(--txt2)}
+.crumb a:hover{color:var(--gold2)}
+.proj-head{margin:14px 0 20px;display:flex;gap:20px;align-items:flex-end;flex-wrap:wrap}
+.proj-head h2{font-family:var(--font-song);font-size:clamp(22px,3.4vw,30px);letter-spacing:2px}
+.proj-head .t2{color:var(--txt3);font-size:13px}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:4px 0 14px;border-bottom:1px solid var(--line);scrollbar-width:none;position:sticky;top:60px;background:var(--bg);z-index:20}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:8px 15px;border-radius:99px;font-size:13px;color:var(--txt2);white-space:nowrap;transition:.2s;border:1px solid transparent}
+.tab:hover{color:var(--txt)}
+.tab.on{color:var(--gold2);background:var(--gold-dim);border-color:rgba(200,161,94,.35)}
+.view{padding-top:26px}
+
+/* 概览 */
+.ov-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.ov-img{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.ov-img img{width:100%}
+.qa{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin-bottom:14px}
+.qa h4{font-size:12px;color:var(--gold);letter-spacing:2px;margin-bottom:8px;font-weight:600}
+.qa p{font-size:14px;color:var(--txt)}
+
+/* 台账 */
+.ledger{width:100%;border-collapse:collapse;background:var(--bg2);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.ledger td{padding:13px 18px;border-bottom:1px solid var(--line);font-size:14px}
+.ledger tr:last-child td{border-bottom:none}
+.ledger td:first-child{color:var(--txt3);width:120px;font-size:13px}
+
+/* 照片 */
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.photos .ph{aspect-ratio:4/3;border-radius:10px;overflow:hidden;cursor:zoom-in;border:1px solid var(--line)}
+.photos .ph img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.photos .ph:hover img{transform:scale(1.06)}
+
+/* 占位 */
+.placeholder{background:var(--bg2);border:1px dashed #3a3a42;border-radius:var(--radius);padding:52px 30px;text-align:center}
+.placeholder .ic{font-size:34px;opacity:.5}
+.placeholder h3{font-family:var(--font-song);font-size:18px;letter-spacing:2px;margin:14px 0 8px}
+.placeholder p{color:var(--txt3);font-size:13px;max-width:420px;margin:0 auto}
+.placeholder .pill{display:inline-block;margin-top:16px;font-size:11.5px;color:var(--gold2);border:1px solid rgba(200,161,94,.4);border-radius:99px;padding:4px 14px;letter-spacing:1px}
+
+/* 工艺卡 */
+.craft-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.craft{display:flex;gap:16px;background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:16px;cursor:pointer;transition:.25s;align-items:center}
+.craft:hover{border-color:var(--gold)}
+.craft img{width:92px;height:92px;object-fit:cover;border-radius:10px;flex-shrink:0}
+.craft .lt{font-family:var(--font-song);font-size:26px;color:var(--gold);line-height:1}
+.craft h4{font-size:15px;margin-top:6px;letter-spacing:1px}
+.craft p{font-size:12px;color:var(--txt3);margin-top:4px}
+
+/* 图纸 */
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.search{flex:1;min-width:180px;background:var(--bg2);border:1px solid var(--line);border-radius:99px;padding:10px 18px;color:var(--txt);font-size:14px;outline:none}
+.search:focus{border-color:var(--gold)}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.fbtn{padding:9px 16px;border-radius:99px;font-size:13px;color:var(--txt2);border:1px solid var(--line);transition:.2s}
+.fbtn.on{color:var(--gold2);border-color:rgba(200,161,94,.5);background:var(--gold-dim)}
+.dwg{display:flex;align-items:center;gap:14px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;transition:.2s}
+.dwg:hover{border-color:var(--gold)}
+.dwg-ico{width:38px;height:38px;border-radius:9px;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.dwg-info{flex:1;min-width:0}
+.dwg-info h4{font-size:14.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dwg-info span{font-size:12px;color:var(--txt3)}
+.dwg-btns{display:flex;gap:8px;flex-shrink:0}
+.btn-sm{font-size:12px;padding:7px 14px;border-radius:99px;border:1px solid var(--line);color:var(--txt2);transition:.2s}
+.btn-sm:hover{color:var(--gold2);border-color:var(--gold)}
+.btn-sm.pri{background:var(--gold-dim);border-color:rgba(200,161,94,.4);color:var(--gold2)}
+
+/* flow 入口 */
+.flow-banner{display:flex;align-items:center;gap:20px;background:linear-gradient(120deg,#181510,#141416);border:1px solid rgba(200,161,94,.35);border-radius:var(--radius);padding:26px;cursor:pointer;transition:.25s;margin-bottom:26px}
+.flow-banner:hover{transform:translateY(-2px);border-color:var(--gold)}
+.flow-banner .ic{font-size:30px}
+.flow-banner h3{font-family:var(--font-song);font-size:18px;letter-spacing:2px}
+.flow-banner p{font-size:12.5px;color:var(--txt2);margin-top:4px}
+.flow-banner .go{margin-left:auto;color:var(--gold);font-size:20px}
+
+/* 设置 */
+.set-block{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:16px}
+.set-block h3{font-family:var(--font-song);font-size:17px;letter-spacing:2px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.set-block h3::before{content:"";width:14px;height:1px;background:var(--gold)}
+.set-block p{color:var(--txt2);font-size:14px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.team-grid .tm{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.team-grid .tm img{width:100%;aspect-ratio:1;object-fit:cover}
+.team-grid .tm div{padding:10px 12px;font-size:12.5px;color:var(--txt2)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;flex-direction:column}
+.lb.on{display:flex}
+.lb img{max-width:92vw;max-height:80vh;border-radius:8px}
+.lb-cap{color:var(--txt2);font-size:13px;margin-top:14px}
+.lb-x{position:absolute;top:18px;right:22px;font-size:26px;color:#fff;opacity:.7;padding:8px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:30px;color:#fff;opacity:.55;padding:16px}
+.lb-nav:hover{opacity:1}
+.lb-prev{left:6px}.lb-next{right:6px}
+
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(20px);background:#222;border:1px solid var(--gold);color:var(--gold2);padding:10px 22px;border-radius:99px;font-size:13px;opacity:0;transition:.3s;z-index:100;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%)}
+
+.footer{border-top:1px solid var(--line);margin-top:60px;padding:26px 20px 40px;text-align:center;color:var(--txt3);font-size:12px;letter-spacing:1px}
+
+@media(max-width:860px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .entries{grid-template-columns:1fr}
+  .ov-grid{grid-template-columns:1fr}
+  .craft-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:repeat(3,1fr)}
+  .brand-sub{display:none}
+}
+@media(max-width:560px){
+  .grid{grid-template-columns:1fr}
+  .photos{grid-template-columns:repeat(2,1fr)}
+  .brand-name{font-size:15px;letter-spacing:1px}
+  .nav a{padding:8px 10px;font-size:12.5px}
+  .topbar-in{gap:8px;padding:0 14px}
+  .wrap{padding:0 14px 70px}
+  .hero{padding:52px 0 40px}
+  .dwg-info h4{white-space:normal}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#home">
+      <img id="brandLogo" alt="海本精造">
+      <span><span class="brand-name">海本精造</span><span class="brand-sub">HIBORN CRAFT · 项目管理交互平台</span></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#home" data-r="home">首页</a>
+      <a href="#projects" data-r="projects">项目管理</a>
+      <a href="#outcomes" data-r="outcomes">成果中心</a>
+      <a href="#settings" data-r="settings">系统设置</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="page" id="page-home"></section>
+  <section class="page" id="page-projects"></section>
+  <section class="page" id="page-workbench"></section>
+  <section class="page" id="page-outcomes"></section>
+  <section class="page" id="page-settings"></section>
+</main>
+
+<footer class="footer">海本精造 HIBORN CRAFT · 项目管理交互平台 · 基于城市更新交互架构搭建</footer>
+
+<div class="lb" id="lb">
+  <button class="lb-x" id="lbX">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lb-nav lb-next" id="lbNext">›</button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="assets/data.js"></script>
+<script>
+(function(){
+"use strict";
+var D = window.HB_DATA;
+var $ = function(s){ return document.querySelector(s); };
+var esc = function(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); };
+
+document.getElementById("brandLogo").src = D.logo;
+
+/* ---------- 参考架构：项目工作台 8 个子视图 ---------- */
+var VIEWS = [
+  { key:"overview",   label:"项目概览" },
+  { key:"ledger",     label:"住宅台账" },
+  { key:"photos",     label:"照片档案" },
+  { key:"analysis",   label:"深化分析" },
+  { key:"review",     label:"人工复核" },
+  { key:"community",  label:"社区／街区" },
+  { key:"indicators", label:"指标库" },
+  { key:"reports",    label:"报告成果" }
+];
+var CATEGORY_LABEL = { "partner private":"合作私宅", "partner":"合作项目", "private":"私宅项目" };
+function catLabel(c){ return CATEGORY_LABEL[c] || c || "项目"; }
+
+/* ---------- 路由 ---------- */
+function parse(){
+  var h = location.hash.replace(/^#\/?/, "");
+  var parts = h.split("/").filter(Boolean);
+  return parts;
+}
+function route(){
+  var p = parse();
+  var page = p[0] || "home";
+  document.querySelectorAll(".page").forEach(function(el){ el.classList.remove("on"); });
+  document.querySelectorAll(".nav a").forEach(function(a){
+    a.classList.toggle("on", a.dataset.r === (page==="projects"&&p[1]?"projects":page) || (page==="home"&&a.dataset.r==="home"));
+  });
+  if(page === "projects" && p[1]){
+    renderWorkbench(p[1], p[2] || "overview");
+    show("page-workbench");
+    setNav("projects");
+  } else if(page === "projects"){
+    renderProjects(); show("page-projects"); setNav("projects");
+  } else if(page === "outcomes"){
+    renderOutcomes(); show("page-outcomes"); setNav("outcomes");
+  } else if(page === "settings"){
+    renderSettings(); show("page-settings"); setNav("settings");
+  } else {
+    renderHome(); show("page-home"); setNav("home");
+  }
+  window.scrollTo(0,0);
+}
+function show(id){ document.getElementById(id).classList.add("on"); }
+function setNav(r){
+  document.querySelectorAll(".nav a").forEach(function(a){ a.classList.toggle("on", a.dataset.r===r); });
+}
+window.addEventListener("hashchange", route);
+
+/* ---------- 首页 ---------- */
+function renderHome(){
+  var photoCount = D.cases.reduce(function(n,c){ return n + c.photos.length; }, 0);
+  var featured = D.cases.slice(0,3);
+  $("#page-home").innerHTML =
+    '<div class="hero">' +
+      '<img class="hero-logo" src="'+D.logo+'" alt="">' +
+      '<h1>海本精造 · 项目管理交互平台</h1>' +
+      '<p>深化设计 · 精工落地 · 全过程协同</p>' +
+      '<div class="hero-line"></div>' +
+    '</div>' +
+    '<div class="stats">' +
+      stat(D.cases.length, "在册项目") +
+      stat(D.drawings.length, "图纸成果") +
+      stat(D.craft.length, "工艺指标") +
+      stat(photoCount, "实景照片") +
+    '</div>' +
+    '<h2 class="sec-title">功能入口</h2>' +
+    '<p class="sec-desc">沿用城市更新交互架构，四大模块统一管理项目、成果与系统配置</p>' +
+    '<div class="entries">' +
+      entry("#projects", "🗂", "项目管理", "项目列表 · 项目工作台（概览/台账/照片/分析/复核/指标/报告）") +
+      entry("#outcomes", "📐", "成果中心", "图纸库 · 工艺流程架构 · 工艺库 · 报告模板") +
+      entry("../flow/", "🧭", "工艺流程架构", "海本全过程管理架构交互图（独立页面，支持触屏缩放）", true) +
+      entry("#settings", "⚙️", "系统设置", "品牌信息 · 团队 · 联系方式 · 关于") +
+    '</div>' +
+    '<h2 class="sec-title">精选项目</h2>' +
+    '<p class="sec-desc">点击进入项目工作台</p>' +
+    '<div class="grid">' + featured.map(caseCard).join("") + '</div>';
+}
+function stat(n, label){ return '<div class="stat"><b>'+n+'</b><span>'+label+'</span></div>'; }
+function entry(href, ico, title, desc, ext){
+  return '<a class="entry" href="'+href+'"'+(ext?' target="_blank" rel="noopener"':"")+'>' +
+    '<div class="entry-ico">'+ico+'</div><div><h3>'+title+'</h3><p>'+desc+'</p></div><span class="go">›</span></a>';
+}
+function caseCard(c){
+  var ph = c.photos.length ? c.photos.length+" 张照片" : "照片待补充";
+  return '<div class="card" onclick="location.hash=\'#projects/'+c.key+'\'">' +
+    '<div class="card-img"><img loading="lazy" src="'+c.cover+'" alt=""></div>' +
+    '<div class="card-body"><h3>'+esc(c.title)+'</h3><div class="t2">'+esc(c.type)+'</div>' +
+    '<div class="tags"><span class="tag gold">'+catLabel(c.category)+'</span><span class="tag">'+ph+'</span></div></div></div>';
+}
+
+/* ---------- 项目列表 ---------- */
+function renderProjects(){
+  $("#page-projects").innerHTML =
+    '<h2 class="sec-title">项目管理</h2>' +
+    '<p class="sec-desc">共 '+D.cases.length+' 个项目 · 点击卡片进入项目工作台</p>' +
+    '<div class="grid">'+ D.cases.map(caseCard).join("") +'</div>';
+}
+
+/* ---------- 项目工作台 ---------- */
+function renderWorkbench(key, view){
+  var c = null;
+  D.cases.forEach(function(x){ if(x.key===key) c=x; });
+  if(!c){ location.hash = "#projects"; return; }
+  var valid = VIEWS.some(function(v){ return v.key===view; });
+  if(!valid) view = "overview";
+  var tabs = VIEWS.map(function(v){
+    return '<a class="tab'+(v.key===view?" on":"")+'" href="#projects/'+c.key+'/'+v.key+'">'+v.label+'</a>';
+  }).join("");
+  $("#page-workbench").innerHTML =
+    '<div class="crumb"><a href="#projects">项目管理</a><span>›</span><span>'+esc(c.title)+'</span></div>' +
+    '<div class="proj-head"><h2>'+esc(c.title)+'</h2><span class="t2">'+esc(c.type)+'</span></div>' +
+    '<div class="tabs">'+tabs+'</div>' +
+    '<div class="view">'+ renderView(c, view) +'</div>';
+}
+
+function renderView(c, view){
+  switch(view){
+    case "overview": return vOverview(c);
+    case "ledger": return vLedger(c);
+    case "photos": return vPhotos(c);
+    case "analysis": return vAnalysis(c);
+    case "review": return vReview(c);
+    case "community": return vCommunity(c);
+    case "indicators": return vIndicators(c);
+    case "reports": return vReports(c);
+  }
+  return "";
+}
+
+function vOverview(c){
+  return '<div class="ov-grid">' +
+    '<div class="ov-img"><img src="'+c.cover+'" alt=""></div>' +
+    '<div>' +
+      '<div class="qa"><h4>项目概述</h4><p>'+esc(c.summary)+'</p></div>' +
+      '<div class="qa"><h4>难点 / 挑战</h4><p>'+esc(c.challenge)+'</p></div>' +
+      '<div class="qa"><h4>海本动作</h4><p>'+esc(c.action)+'</p></div>' +
+      '<div class="qa"><h4>落地结果</h4><p>'+esc(c.result)+'</p></div>' +
+    '</div></div>';
+}
+
+function vLedger(c){
+  var rows = [
+    ["项目名称", c.title],
+    ["项目类别", catLabel(c.category)],
+    ["项目类型", c.type],
+    ["照片档案", c.photos.length ? c.photos.length+" 张实景照片" : "待补充"],
+    ["图纸成果", "待关联"],
+    ["深化负责人", "待补充"],
+    ["项目周期", "待补充"],
+    ["当前状态", "待补充"]
+  ];
+  return '<table class="ledger"><tbody>' + rows.map(function(r){
+    return '<tr><td>'+r[0]+'</td><td>'+esc(r[1])+'</td></tr>';
+  }).join("") + '</tbody></table>' +
+  '<p style="color:var(--txt3);font-size:12px;margin-top:12px">台账字段已预留，项目资料整理后可逐项填充。</p>';
+}
+
+function vPhotos(c){
+  if(!c.photos.length){
+    return ph("🖼", "照片档案待补充", "该项目的实景照片正在整理归档，归档后将在此按空间 / 工序分类展示。");
+  }
+  return '<div class="photos">' + c.photos.map(function(p, i){
+    return '<div class="ph" data-ph="'+p+'" data-cap="'+esc(c.title)+' · '+(i+1)+'/'+c.photos.length+'"><img loading="lazy" src="'+p+'" alt=""></div>';
+  }).join("") + '</div>' +
+  '<p style="color:var(--txt3);font-size:12px;margin-top:12px">共 '+c.photos.length+' 张 · 点击放大查看</p>';
+}
+
+function vAnalysis(c){
+  var ana = D.drawings.filter(function(d){ return d.category==="分析图"; });
+  return ph("📊", "深化分析", "项目级深化分析资料（户型分析、完成面分析、机电点位分析等）整理后将关联到具体项目。当前可在成果中心查看全部 "+ana.length+" 份分析图。") +
+    '<div style="text-align:center;margin-top:18px"><a class="btn-sm pri" href="#outcomes" style="display:inline-block">前往成果中心查看分析图 ›</a></div>';
+}
+
+function vReview(c){
+  return ph("🔍", "人工复核", "图纸复核、五步放线复核、关键节点复核记录将在此归档。复核流程与「工艺流程架构」中的复核节点一一对应。");
+}
+
+function vCommunity(c){
+  return ph("🏘", "社区／街区", "项目所在社区与街区的基础资料、周边关系分析将在此展示。此模块为架构预留选项，资料收集中。");
+}
+
+function vIndicators(c){
+  return '<p class="sec-desc" style="margin-bottom:18px">海本十大工艺指标 · 全过程统一执行标准</p>' +
+    '<div class="craft-grid">' + D.craft.map(function(k){
+      return '<div class="craft" data-ph="'+k.img+'" data-cap="工艺 '+k.letter+' · '+esc(k.name)+'">' +
+        '<img loading="lazy" src="'+k.img+'" alt=""><div><div class="lt">'+k.letter+'</div><h4>'+esc(k.name)+'</h4><p>点击查看工艺图卡</p></div></div>';
+    }).join("") + '</div>';
+}
+
+function vReports(c){
+  return ph("📄", "报告成果", "项目级报告（深化报告、验收报告、复盘报告）将在此归档。当前 25 份图纸成果统一在成果中心图纸库管理。") +
+    '<div style="text-align:center;margin-top:18px"><a class="btn-sm pri" href="#outcomes" style="display:inline-block">前往成果中心图纸库 ›</a></div>';
+}
+
+function ph(ico, title, desc){
+  return '<div class="placeholder"><div class="ic">'+ico+'</div><h3>'+title+'</h3><p>'+desc+'</p><span class="pill">模块已预留 · 资料填充中</span></div>';
+}
+
+/* ---------- 成果中心 ---------- */
+var dwgFilter = "全部", dwgKw = "";
+function renderOutcomes(){
+  var cats = ["全部"];
+  D.drawings.forEach(function(d){ if(cats.indexOf(d.category)<0) cats.push(d.category); });
+  $("#page-outcomes").innerHTML =
+    '<h2 class="sec-title">成果中心</h2>' +
+    '<p class="sec-desc">图纸成果 · 工艺流程 · 工艺指标 · 报告模板</p>' +
+    '<a class="flow-banner" href="../flow/" target="_blank" rel="noopener">' +
+      '<span class="ic">🧭</span><div><h3>工艺流程架构</h3><p>海本全过程管理架构交互图 · 独立页面 · 支持触屏缩放与深化节点图纸直达</p></div><span class="go">›</span></a>' +
+    '<h2 class="sec-title" style="margin-top:36px">图纸库</h2>' +
+    '<p class="sec-desc">共 '+D.drawings.length+' 份 · 点击在线打开，任何人可访问</p>' +
+    '<div class="tools">' +
+      '<input class="search" id="dwgKw" placeholder="搜索图纸名称…" value="'+esc(dwgKw)+'">' +
+      '<div class="filters" id="dwgFilters">' + cats.map(function(c){
+        var n = c==="全部" ? D.drawings.length : D.drawings.filter(function(d){return d.category===c;}).length;
+        return '<button class="fbtn'+(c===dwgFilter?" on":"")+'" data-cat="'+c+'">'+c+' '+n+'</button>';
+      }).join("") + '</div>' +
+    '</div>' +
+    '<div id="dwgList"></div>' +
+    '<h2 class="sec-title" style="margin-top:40px">工艺库</h2>' +
+    '<p class="sec-desc">十大工艺指标图卡 · 点击查看大图</p>' +
+    '<div class="craft-grid">' + D.craft.map(function(k){
+      return '<div class="craft" data-ph="'+k.img+'" data-cap="工艺 '+k.letter+' · '+esc(k.name)+'">' +
+        '<img loading="lazy" src="'+k.img+'" alt=""><div><div class="lt">'+k.letter+'</div><h4>'+esc(k.name)+'</h4><p>点击查看工艺图卡</p></div></div>';
+    }).join("") + '</div>' +
+    '<h2 class="sec-title" style="margin-top:40px">报告模板</h2>' +
+    ph("🧾", "报告模板待填充", "深化报告、交底记录、验收单、复盘报告等模板将在此提供下载。此模块为架构预留选项。");
+  renderDwgList();
+  $("#dwgKw").addEventListener("input", function(){ dwgKw = this.value; renderDwgList(); });
+  $("#dwgFilters").addEventListener("click", function(e){
+    var b = e.target.closest(".fbtn"); if(!b) return;
+    dwgFilter = b.dataset.cat;
+    this.querySelectorAll(".fbtn").forEach(function(x){ x.classList.toggle("on", x===b); });
+    renderDwgList();
+  });
+}
+function renderDwgList(){
+  var kw = dwgKw.trim().toLowerCase();
+  var list = D.drawings.filter(function(d){
+    if(dwgFilter!=="全部" && d.category!==dwgFilter) return false;
+    if(kw && d.title.toLowerCase().indexOf(kw)<0) return false;
+    return true;
+  });
+  $("#dwgList").innerHTML = list.length ? list.map(function(d){
+    return '<div class="dwg"><div class="dwg-ico">📐</div>' +
+      '<div class="dwg-info"><h4>'+esc(d.title)+'</h4><span>'+d.category+' · PDF</span></div>' +
+      '<div class="dwg-btns"><a class="btn-sm pri" href="'+d.url+'" target="_blank" rel="noopener">打开</a>' +
+      '<button class="btn-sm" data-copy="'+d.url+'">复制链接</button></div></div>';
+  }).join("") : '<p style="color:var(--txt3);padding:20px 0">没有匹配的图纸</p>';
+}
+
+/* ---------- 系统设置 ---------- */
+function renderSettings(){
+  $("#page-settings").innerHTML =
+    '<h2 class="sec-title">系统设置</h2>' +
+    '<p class="sec-desc">品牌信息 · 团队 · 联系方式 · 关于本系统</p>' +
+    '<div class="set-block"><h3>品牌信息</h3>' +
+      '<div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">' +
+      '<img src="'+D.logo+'" style="height:52px" alt="">' +
+      '<p>海本精造 HIBORN CRAFT —— 专注高端私宅深化设计与精工落地，以「深化先行、工艺先行」为方法，提供从图纸深化到施工落地的全过程服务。</p></div></div>' +
+    '<div class="set-block"><h3>核心团队</h3><div class="team-grid">' +
+      D.team.map(function(t){
+        return '<div class="tm"><img loading="lazy" src="'+t.img+'" data-ph="'+t.img+'" data-cap="'+esc(t.title)+'" style="cursor:zoom-in" alt=""><div>'+esc(t.title)+'</div></div>';
+      }).join("") + '</div></div>' +
+    '<div class="set-block"><h3>联系方式</h3>' +
+      '<p>官方网站：<a href="../" target="_blank" rel="noopener" style="color:var(--gold2)">海本精造官网 ›</a></p>' +
+      '<p style="margin-top:8px">电话 / 微信 / 邮箱等联系资料整理中，将在此展示。</p></div>' +
+    '<div class="set-block"><h3>关于本系统</h3>' +
+      '<p>海本项目管理交互平台 v1.0</p>' +
+      '<p style="margin-top:6px">架构参考：城市更新交互系统（smart-renew）· 顶层模块：首页 / 项目管理 / 成果中心 / 系统设置 · 项目工作台：概览 / 台账 / 照片 / 分析 / 复核 / 社区 / 指标 / 报告</p>' +
+      '<p style="margin-top:6px">数据来源：海本官网公开资料 · 图纸托管于 GitHub Pages，任何人均可访问</p></div>';
+}
+
+/* ---------- lightbox ---------- */
+var lbList = [], lbIdx = 0;
+function openLb(list, idx){
+  lbList = list; lbIdx = idx;
+  showLb();
+  $("#lb").classList.add("on");
+  document.body.style.overflow = "hidden";
+}
+function showLb(){
+  var it = lbList[lbIdx];
+  $("#lbImg").src = it.src;
+  $("#lbCap").textContent = it.cap || "";
+}
+function closeLb(){ $("#lb").classList.remove("on"); document.body.style.overflow = ""; }
+$("#lbX").onclick = closeLb;
+$("#lb").addEventListener("click", function(e){ if(e.target===this) closeLb(); });
+$("#lbPrev").onclick = function(e){ e.stopPropagation(); lbIdx = (lbIdx-1+lbList.length)%lbList.length; showLb(); };
+$("#lbNext").onclick = function(e){ e.stopPropagation(); lbIdx = (lbIdx+1)%lbList.length; showLb(); };
+document.addEventListener("keydown", function(e){
+  if(!$("#lb").classList.contains("on")) return;
+  if(e.key==="Escape") closeLb();
+  if(e.key==="ArrowLeft") $("#lbPrev").click();
+  if(e.key==="ArrowRight") $("#lbNext").click();
+});
+/* 事件委托：所有 data-ph 元素可放大 */
+document.addEventListener("click", function(e){
+  var cp = e.target.closest("[data-copy]");
+  if(cp){
+    var url = cp.dataset.copy;
+    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function(){
+      toast("链接已复制");
+    }, function(){
+      var t = document.createElement("textarea"); t.value = url; document.body.appendChild(t);
+      t.select(); try{ document.execCommand("copy"); toast("链接已复制"); }catch(_){ toast("复制失败，请长按链接"); }
+      document.body.removeChild(t);
+    });
+    return;
+  }
+  var phEl = e.target.closest("[data-ph]");
+  if(phEl){
+    var scope = phEl.closest(".photos");
+    if(scope){
+      var items = Array.prototype.map.call(scope.querySelectorAll("[data-ph]"), function(x){
+        return { src:x.dataset.ph, cap:x.dataset.cap };
+      });
+      openLb(items, Array.prototype.indexOf.call(scope.querySelectorAll("[data-ph]"), phEl));
+    } else {
+      openLb([{ src:phEl.dataset.ph, cap:phEl.dataset.cap }], 0);
+    }
+  }
+});
+
+/* ---------- toast ---------- */
+var toastTimer = null;
+function toast(msg){
+  var t = $("#toast"); t.textContent = msg; t.classList.add("on");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ t.classList.remove("on"); }, 1800);
+}
+
+route();
+})();
+</script>
+</body>
+</html>
